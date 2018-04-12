@@ -30,4 +30,66 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/levelText" />
 
+    <TextView
+        android:id="@+id/hpView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="269dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="72dp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/levelText" />
+
+    <TextView
+        android:id="@+id/mpView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="269dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="21dp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hpView" />
+
+    <TextView
+        android:id="@+id/stmView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="269dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="26dp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mpView" />
+
+    <TextView
+        android:id="@+id/wheightView"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:layout_marginEnd="269dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="26dp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stmView" />
+
+    <CheckBox
+        android:id="@+id/msBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="164dp"
+        android:layout_marginStart="167dp"
+        android:layout_marginTop="233dp"
+        android:checked="false"
+        android:duplicateParentState="false"
+        android:text="MS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pointsView" />
+
 </android.support.constraint.ConstraintLayout>
