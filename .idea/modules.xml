@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/WptBuild.iml" filepath="$PROJECT_DIR$/WptBuild.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WPTbuild.iml" filepath="$PROJECT_DIR$/WPTbuild.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

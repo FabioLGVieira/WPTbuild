@@ -2,36 +2,36 @@ package com.example.adm.wptbuild;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    int sp, ep;
+    int lvl, strg, sprt, tal, agi, hlth, stats, sp, ep, additional;
+    double hp, mp, stm, atk, def, abs, vel, wheight, pdAtkMin, getPdAtkMax, bootsVel;
 
     EditText lvlText;
-    TextView pointsView;
+    TextView pointsView, hpView, mpView, stmView, wheightView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        CheckBox checkbox = (CheckBox) findViewById(R.id.msBox);
+
         lvlText = findViewById(R.id.levelText);
         pointsView = findViewById(R.id.pointsView);
+        hpView = findViewById(R.id.hpView);
+        mpView = findViewById(R.id.mpView);
+        stmView = findViewById(R.id.stmView);
+        wheightView = findViewById(R.id.wheightView);
 
         String points = lvlText.getText().toString();
 
-        if (!points.equals("")) {
-            int pt = Integer.parseInt(points);
-            int point = ((pt - 9) * 5) + ((pt - 79) * 2) + ((pt - 89) * 3) + 25;
-            sp = ((pt - 9) / 2) + 2;
-            ep = (pt - 59) / 2;
-            pointsView.setText("Avaiable points: " + point);
-        }
 
     }
 }
