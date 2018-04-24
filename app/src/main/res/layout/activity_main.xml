@@ -6,14 +6,53 @@
     android:layout_height="match_parent"
     tools:context="com.example.adm.wptbuild.MainActivity">
 
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Choose your class:" />
+
+            <RadioButton
+                android:id="@+id/btn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fighter" />
+
+            <RadioButton
+                android:id="@+id/btn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Archer" />
+            <RadioButton
+                android:id="@+id/btn3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mechanician" />
+
+
+        </RadioGroup>
+    </GridLayout>
+
     <EditText
         android:id="@+id/levelText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="56dp"
         android:ems="10"
         android:hint="Your level"
         android:inputType="textPersonName"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,8 +61,7 @@
         android:id="@+id/pointsView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="340dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:text="0"
         android:textSize="18dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -34,11 +72,11 @@
         android:id="@+id/hpView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="269dp"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginRight="57dp"
+        android:layout_marginTop="68dp"
         android:text="0"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/levelText" />
 
@@ -46,11 +84,11 @@
         android:id="@+id/mpView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="269dp"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginRight="57dp"
+        android:layout_marginTop="28dp"
         android:text="0"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hpView" />
 
@@ -58,38 +96,57 @@
         android:id="@+id/stmView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="269dp"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginRight="57dp"
+        android:layout_marginTop="36dp"
         android:text="0"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mpView" />
 
     <TextView
-        android:id="@+id/wheightView"
+        android:id="@+id/weightView"
         android:layout_width="wrap_content"
         android:layout_height="18dp"
-        android:layout_marginEnd="269dp"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginRight="57dp"
+        android:layout_marginTop="40dp"
         android:text="0"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/stmView" />
 
-    <CheckBox
-        android:id="@+id/msBox"
+    <Button
+        android:id="@+id/CalculateBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="164dp"
-        android:layout_marginStart="167dp"
-        android:layout_marginTop="233dp"
-        android:checked="false"
-        android:duplicateParentState="false"
-        android:text="MS"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="125dp"
+        android:text="Calculate"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pointsView" />
+        app:layout_goneMarginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/weightView" />
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="66dp"
+        android:layout_marginStart="37dp"
+        android:text="CheckBox"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="111dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="18dp"
+        android:text="CheckBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkBox1"
+        app:layout_constraintTop_toBottomOf="@+id/CalculateBtn" />
+
 
 </android.support.constraint.ConstraintLayout>
