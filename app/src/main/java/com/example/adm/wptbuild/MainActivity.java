@@ -12,71 +12,77 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
-    int lvl, strg, sprt, tal, agi, hlth, fUsed, iUsed, tUsed, aUsed, vUsed, stats, statsUsed,   //status
+    private int lvl, strg, sprt, tal, agi, hlth, fUsed, iUsed, tUsed, aUsed, vUsed, stats, statsUsed,   //status
             amuletAddHp, amuletAddMp, amuletAddStm,  //amulet
-            ring1AddHp, ring1AddStm, ring1Def, ring1AtkRtg, ring1AddMp, //ring1
-            ring2AddHp, ring2AddStm, ring2Def, ring2AtkRtg, ring2AddMp, //ring2
-            shelHpAdd, shelMpAdd, shelHpBoost, shelMpBoost, //sheltom
-            bracDef, bracAtk, bracSpecDiv, //bracelets
-            gauntDef, gauntDefAdd,  //gauntlets
-            bootsDef, bootsDefAdd, //boots
-            wpnAtkpwr1, wpnAtkpwr2, wpnAtkRtg, //weapon
-            armorDef, armorDefAdd, //armor
-            shieldDef, shieldDefAdd,  //shield
-            sp, ep;
-    double hp, mp, stm, atkRtg, def, abs, vel, weight,
+            ring1AddHp, ring1AddStm, ring1Def, ring1AtkRtg, ring1AddMp, ring1StmMix, //ring1
+            ring2AddHp, ring2AddStm, ring2Def, ring2AtkRtg, ring2AddMp, ring2StmMix, //ring2
+            shelHpAdd, shelMpAdd, shelHpBoost, shelMpBoost, shelDefMix, shelMinMix, shelMaxMix, //sheltom
+            bracDef, bracAtk, bracSpecDiv, bracHpMix, bracMpMix, bracStmMix, //bracelets
+            gauntDef, gauntDefAdd, gauntHpMix, gauntMpMix, gauntStmMix, //gauntlets
+            bootsDef, bootsDefAdd, bootsHpMix, bootsMpMix, bootsStmMix, //boots
+            wpnAtkpwr1, wpnAtkpwr2, wpnAtkRtg, wpnHpMix, wpnMpMix, //weapon
+            armorDef, armorDefAdd, armorHpMix, armorMpMix, //armor
+            shieldDef, shieldDefAdd, shieldHpMix, shieldMpMix, orbStmMix, //shield
+            sp, ep, addHp, addStm, addMp;
+    private double hp, mp, stm, atkRtg, def, abs, vel, weight,
             amuletMpRecover, amuletHpReg, amuletMpReg, amuletStmReg, //amulet
-            ring1HpRecover,ring1Abs, ring1HpReg, ring1MpReg, //ring1
-            ring2HpRecover,ring2Abs, ring2HpReg, ring2MpReg, //ring2
+            ring1HpRecover, ring1Abs, ring1HpReg, ring1MpReg, //ring1
+            ring2HpRecover, ring2Abs, ring2HpReg, ring2MpReg, //ring2
             shelHpRegen, shelMpRegen, shelHpRecover, shelMpRecover, //sheltom
             bracSpec, bracCrit, //sheltom
             gauntAbs, gauntAbsAdd, gauntAtkPwr, //gauntlets
-            bootsAbs,  bootsAbsAdd, bootsSpd, bootsSpdAdd, //boots
+            bootsAbs, bootsAbsAdd, bootsSpd, bootsSpdAdd, //boots
             wpnAtkCrit, wpnAtkBlk, wpnAtkpwrSpec, wpnAtkRtgSpec, wpnAtkCritSpec, //weapon
-            armorAbs,  armorAbsAdd, //armor
+            armorAbs, armorAbsAdd, //armor
             shieldAbs, shieldBlk, shieldAbsAdd, shieldBlkAdd, //shield
             pdAtkMin, pdAtkMax;
 
-
-    EditText lvlText;
-    TextView pointsView, hpView, mpView, stmView, weightView;
-    RadioGroup rdGroup;
-    RadioButton fsBtn;
+    EditText lvlText, strgtxt, sprttxt, taltxt, agitxt, healthtxt;
+    TextView pointsView;
     Button calcbtn;
-    CheckBox chkbox1, chkbox2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        lvlText = findViewById(R.id.levelText);
+        lvlText = (EditText) findViewById(R.id.levelText);
         pointsView = findViewById(R.id.pointsView);
-        hpView = findViewById(R.id.hpView);
-        mpView = findViewById(R.id.mpView);
-        stmView = findViewById(R.id.stmView);
-        weightView = findViewById(R.id.weightView);
-        rdGroup = (RadioGroup) findViewById(R.id.radioGroup);
-        String points = lvlText.getText().toString();
+        strgtxt = (EditText) findViewById(R.id.strgTxt);
+        sprttxt = (EditText) findViewById(R.id.sprtText);
+        taltxt = (EditText) findViewById(R.id.talText);
+        agitxt = (EditText) findViewById(R.id.agiText);
+        healthtxt = (EditText) findViewById(R.id.healthText);
         calcbtn = (Button) findViewById(R.id.CalculateBtn);
-        fsBtn = (RadioButton) findViewById(rdGroup.getCheckedRadioButtonId());
-        chkbox1 = (CheckBox) findViewById(R.id.checkBox1);
+
+
 
         calcbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-             pointsView.setText("Avaiable points: " + stats);
-             hpView.setText("HP: " +  hp);
-             mpView.setText("MP: "+ mp);
-             stmView.setText("STM: " + stm);
-             weightView.setText("weight: " + weight);
+                Classes teste = new Classes();
+                teste.setLvl(Integer.parseInt(lvlText.getText().toString()));
+                teste.setF(Integer.parseInt(strgtxt.getText().toString()));
+                teste.setI(Integer.parseInt(sprttxt.getText().toString()));
+                teste.setT(Integer.parseInt(taltxt.getText().toString()));
+                teste.setA(Integer.parseInt(agitxt.getText().toString()));
+                teste.setV(Integer.parseInt(healthtxt.getText().toString()));
 
-             //Log.i("sadhausi","selecionou " + fsBtn);
 
-                }
+                String texto = "your lvl: " + teste.getLvl() +
+                        "\nf " + teste.getF() +
+                        "\ns " + teste.getI() +
+                        "\nt " + teste.getT() +
+                        "\na " + teste.getA() +
+                        "\nv " + teste.getV() +
+                        "\nWeight " + teste.calcWeight(teste.getF(), teste.getV(), teste.getLvl(), teste.getI(), teste.getA());
+
+                pointsView.setText(String.valueOf(texto));
+
+            }
 
 
         });
