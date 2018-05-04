@@ -6,155 +6,343 @@
     android:layout_height="match_parent"
     tools:context="com.example.adm.wptbuild.MainActivity">
 
-    <EditText
-        android:id="@+id/levelText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:hint="Your level"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/txt1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="15dp"
-        android:text="Strength: "
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/levelText" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/strgTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:ems="5"
-        android:inputType="number"
-        android:text="28"
-        app:layout_constraintTop_toBottomOf="@id/levelText"
-        android:layout_marginLeft="15dp"
-        app:layout_constraintLeft_toRightOf="@id/txt1"/>
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/txt2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="15dp"
-        android:text="Spirit: "
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt1" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/sprtText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="5"
-        android:inputType="number"
-        android:text="6"
-        app:layout_goneMarginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/strgTxt"
-        android:layout_marginLeft="15dp"
-        app:layout_constraintLeft_toRightOf="@id/txt2"/>
+                    <RadioGroup
+                        android:id="@+id/lay1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/txt3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="15dp"
-        android:text="Talent: "
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt2" />
+                        <RadioButton
+                            android:id="@+id/btnFs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="rgClick"
+                            android:text="Fighter" />
 
-    <EditText
-        android:id="@+id/talText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="5"
-        android:inputType="number"
-        android:text="21"
-        app:layout_goneMarginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/sprtText"
-        android:layout_marginLeft="15dp"
-        app:layout_constraintLeft_toRightOf="@id/txt3"/>
+                        <RadioButton
+                            android:id="@+id/btnMs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="rgClick"
+                            android:text="Mechanician" />
 
-    <TextView
-        android:id="@+id/txt4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="15dp"
-        android:text="Agility: "
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt3" />
+                        <RadioButton
+                            android:id="@+id/btnPs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="rgClick"
+                            android:text="Pike" />
 
-    <EditText
-        android:id="@+id/agiText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="5"
-        android:inputType="number"
-        android:text="17"
-        app:layout_goneMarginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/talText"
-        android:layout_marginLeft="15dp"
-        app:layout_constraintLeft_toRightOf="@id/txt4"/>
+                        <RadioButton
+                            android:id="@+id/btnAs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="rgClick"
+                            android:text="Archer" />
 
-    <TextView
-        android:id="@+id/txt5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="15dp"
-        android:text="Health: "
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt4" />
+                        <RadioButton
+                            android:id="@+id/btnAss"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="rgClick"
+                            android:text="Assassin" />
 
-    <EditText
-        android:id="@+id/healthText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="5"
-        android:inputType="number"
-        android:text="27"
-        app:layout_goneMarginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/agiText"
-        android:layout_marginLeft="15dp"
-        app:layout_constraintLeft_toRightOf="@id/txt5"/>
+                        <RadioButton
+                            android:id="@+id/btnKs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="rgClick"
+                            android:text="Knight" />
 
-    <Button
-        android:id="@+id/CalculateBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Calculate"
-        app:layout_constraintTop_toBottomOf="@id/healthText"
-        android:layout_marginLeft="130dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        />
+                        <RadioButton
+                            android:id="@+id/btnMgs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="rgClick"
+                            android:text="Mage" />
 
-    <TextView
-        android:id="@+id/pointsView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="0"
-        android:textSize="22dp"
-        app:layout_constraintTop_toBottomOf="@+id/CalculateBtn"
-        android:layout_marginLeft="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+                        <RadioButton
+                            android:id="@+id/btnSs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="rgClick"
+                            android:text="Shaman" />
+
+                        <RadioButton
+                            android:id="@+id/btnPrs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="rgClick"
+                            android:text="Priestess" />
+
+                        <RadioButton
+                            android:id="@+id/btnAts"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="rgClick"
+                            android:text="Atalanta" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Level: "
+                    android:textSize="@dimen/sizeText" />
+
+                <EditText
+                    android:id="@+id/levelText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@+id/txt1"/>
+
+                <TextView
+                    android:id="@+id/txt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="1"
+                    android:text="Strength: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintTop_toBottomOf="@id/txt1"/>
+
+                <EditText
+                    android:id="@+id/strgTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="1"
+                    android:ems="3"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt2"/>
+
+                <TextView
+                    android:id="@+id/txt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_row="1"
+                    android:text="Spirit: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintLeft_toRightOf="@id/strgTxt"/>
+
+                <EditText
+                    android:id="@+id/sprtText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="3"
+                    android:layout_row="1"
+                    android:ems="3"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt3"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="2"
+                    android:text="Talent: "
+                    android:textSize="@dimen/sizeText" />
+
+                <EditText
+                    android:id="@+id/talText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="2"
+                    android:ems="3"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="@dimen/sizeEdit" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_row="2"
+                    android:text="Agility: "
+                    android:textSize="@dimen/sizeText" />
+
+                <EditText
+                    android:id="@+id/agiText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="3"
+                    android:layout_row="2"
+                    android:ems="3"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="@dimen/sizeEdit" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="3"
+                    android:text="Health: "
+                    android:textSize="@dimen/sizeText" />
+
+                <EditText
+                    android:id="@+id/healthText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_row="3"
+                    android:ems="3"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="@dimen/sizeEdit" />
+
+                <TextView
+                    android:id="@+id/pointsLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_row="3"
+                    android:text="Left Pts:"
+                    android:textSize="@dimen/sizeText" />
+
+                <EditText
+                    android:id="@+id/leftPtsTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="3"
+                    android:layout_row="3"
+                    android:ems="3"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="@dimen/sizeEdit" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_row="4"
+                    android:text="Amulet"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_row="5"
+                    android:text="Hp Add: "
+                    android:textSize="@dimen/sizeText" />
+
+                <EditText
+                    android:id="@+id/amulet0Txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:ems="3"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="@dimen/sizeEdit" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spec: "
+                    android:textSize="@dimen/sizeText"/>
+
+                <EditText
+                    android:id="@+id/amulet1Txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="3"
+                    android:ems="3"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="@dimen/sizeEdit" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_marginTop="4dp"
+                    android:layout_row="6"
+                    android:text="Mp Add: "
+                    android:textSize="@dimen/sizeText" />
+
+                <EditText
+                    android:id="@+id/amulet2Txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_gravity="center_horizontal"
+                    android:ems="3"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="@dimen/sizeEdit" />
 
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spec: "
+                    android:textSize="@dimen/sizeText"/>
 
+                <EditText
+                    android:id="@+id/amulet3Txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="3"
+                    android:ems="3"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="@dimen/sizeEdit" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+            <Button
+                android:id="@+id/CalculateBtn"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Calculate" />
+
+            <TextView
+                android:id="@+id/resultView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="20dp" />
+        </LinearLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
