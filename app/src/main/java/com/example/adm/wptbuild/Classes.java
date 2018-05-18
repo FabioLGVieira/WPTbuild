@@ -5,7 +5,7 @@ public class Classes {
 
     private int f, i, t, a, v; //28  6  21  17  27
 
-    private int lvl, addHp, addStm, addMp;
+    private int lvl, addHp, addStm, addMp, pdBaseMin = 3, pdBaseMax = 4;
     private double hp, mp, stm, atkRtg, def, abs, spd, weight, pdAtkMin, pdAtkMax;
 
     public Classes() {
@@ -24,6 +24,8 @@ public class Classes {
         vUsed = 0;
         hlth = v - vUsed;*/
 
+
+
     }
 
     public double calcAtkRtg(int lvl, int agi, int tal, int wpnAtkRtg, int bracAtk, int bracSpec, int ring1AtkRtg, int ring2AtkRtg) {
@@ -31,12 +33,42 @@ public class Classes {
         return atkRtg;
     }
 
-    public double atkPwr1(int tal, int agi, int wpnAtkpwr1, int shelMinMix) {
-        pdAtkMin = ((tal + agi) / 50 + wpnAtkpwr1 + shelMinMix);  // falta
+    public double atkPwr1Agi(int tal, int agi, int wpnAtkpwr1, int wpnAtkPwr2, int shelMinMix) {
+        pdAtkMin = pdBaseMin + (wpnAtkpwr1+wpnAtkPwr2)/16 + lvl/6 + (tal + agi) / 40 + ((agi/130)*wpnAtkpwr1) + wpnAtkpwr1 + shelMinMix;  // falta
         return pdAtkMin;
     }
 
-    public double atkPwr2(int tal, int agi, int wpnAtkpwr2, int shelMaxMix) {
+    public double atkPwr1Fs(int strg, int tal, int agi, int wpnAtkpwr1, int wpnAtkPwr2, int shelMinMix) {
+        pdAtkMin = pdBaseMin + (strg/130) + (tal + agi) / 40 + (wpnAtkpwr1 + wpnAtkPwr2)/16 + lvl/6 + ((strg/130)*wpnAtkpwr1) + wpnAtkpwr1 + shelMinMix;  // falta
+        return pdAtkMin;
+    }
+
+    public double atkPwr1Sprt(int sprt, int tal, int agi, int wpnAtkpwr1, int wpnAtkPwr2, int shelMinMix) {
+        pdAtkMin = pdBaseMin + (wpnAtkpwr1+wpnAtkPwr2)/16 + lvl/6 + (tal + agi) / 40 + ((sprt/145)*wpnAtkpwr1) + wpnAtkpwr1 + shelMinMix;  // falta
+        return pdAtkMin;
+    }
+
+    public double atkPwr1Prs(int sprt, int tal, int agi, int wpnAtkpwr1, int wpnAtkPwr2, int shelMinMix) {
+        pdAtkMin = pdBaseMin + (wpnAtkpwr1+wpnAtkPwr2)/16 + lvl/6 + (tal + agi) / 40 + ((sprt/160)*wpnAtkpwr1) + wpnAtkpwr1 + shelMinMix;  // falta
+        return pdAtkMin;
+    }
+
+    public double atkPwr2Agi(int tal, int agi, int wpnAtkpwr2, int shelMaxMix) {
+        pdAtkMax = ((tal + agi) / 45 + wpnAtkpwr2 + shelMaxMix);  // falta
+        return pdAtkMin;
+    }
+
+    public double atkPwr2Fs(int tal, int agi, int wpnAtkpwr2, int shelMaxMix) {
+        pdAtkMax = ((tal + agi) / 45 + wpnAtkpwr2 + shelMaxMix);  // falta
+        return pdAtkMin;
+    }
+
+    public double atkPwr2Sprt(int tal, int agi, int wpnAtkpwr2, int shelMaxMix) {
+        pdAtkMax = ((tal + agi) / 45 + wpnAtkpwr2 + shelMaxMix);  // falta
+        return pdAtkMin;
+    }
+
+    public double atkPwr2Prs(int tal, int agi, int wpnAtkpwr2, int shelMaxMix) {
         pdAtkMax = ((tal + agi) / 45 + wpnAtkpwr2 + shelMaxMix);  // falta
         return pdAtkMin;
     }
@@ -80,12 +112,12 @@ public class Classes {
         return hp;
     }
 
-    public double hpPrs(int lvl, int strg, int hlth) {
+    public double hpPrs(int lvl, int hlth) {
         hp = (lvl * 2.8) + (hlth * 2.8);
         return hp;
     }
 
-    public double hpMgs(int lvl, int strg, int hlth) {
+    public double hpMgs(int lvl, int hlth) {
         hp = (lvl * 1.8) + (hlth * 2);
         return hp;
     }

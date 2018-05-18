@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private int sp, ep, lvl, strg, sprt, tal, agi, hlth, fUsed, iUsed, tUsed, aUsed, vUsed, stats, statsUsed,   //status
+    public int sp, ep, lvl, strg, sprt, tal, agi, hlth, fUsed, iUsed, tUsed, aUsed, vUsed, stats, statsUsed,   //status
             amuletAddHp, amuletAddMp, amuletAddStm,  //amulet
             ring1AddHp, ring1AddStm, ring1Def, ring1AtkRtg, ring1AddMp, ring1StmMix, //ring1
             ring2AddHp, ring2AddStm, ring2Def, ring2AtkRtg, ring2AddMp, ring2StmMix, //ring2
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             wpnAtkpwr1, wpnAtkpwr2, wpnAtkRtg, wpnHpMix, wpnMpMix, //weapon
             armorDef, armorDefAdd, armorHpMix, armorMpMix, //armor
             shieldDef, shieldDefAdd, shieldHpMix, shieldMpMix, orbStmMix; //shield
-    private double amuletMpRecover, amuletHpReg, amuletMpReg, amuletHpRecover, //amulet
+    public double amuletMpRecover, amuletHpReg, amuletMpReg, amuletHpRecover, //amulet
             ring1HpRecover, ring1Abs, ring1HpReg, ring1MpReg, //ring1
             ring2HpRecover, ring2Abs, ring2HpReg, ring2MpReg, //ring2
             shelHpRegen, shelMpRegen, shelHpRecover, shelMpRecover, //sheltom
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         boxAts = (RadioButton) findViewById(R.id.btnAts);
 
         lvlText = (EditText) findViewById(R.id.levelText);
-        leftPoints = findViewById(R.id.pointsLeft);
+        //leftPoints = findViewById(R.id.pointsLeft);
         pointsView = findViewById(R.id.resultView);
         strgtxt = (EditText) findViewById(R.id.strgTxt);
         sprttxt = (EditText) findViewById(R.id.sprtText);
@@ -197,96 +197,96 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int id = rg.getCheckedRadioButtonId();
-                lvl = Integer.parseInt(lvlText.getText().toString());
-                strg = Integer.parseInt(strgtxt.getText().toString());
-                sprt = Integer.parseInt(sprttxt.getText().toString());
-                tal = Integer.parseInt(taltxt.getText().toString());
-                agi = Integer.parseInt(agitxt.getText().toString());
-                hlth = Integer.parseInt(healthtxt.getText().toString());
+                //lvl = Integer.parseInt(lvlText.getText().toString());
+                //strg = Integer.parseInt(strgtxt.getText().toString());
+                //sprt = Integer.parseInt(sprttxt.getText().toString());
+                //tal = Integer.parseInt(taltxt.getText().toString());
+                //agi = Integer.parseInt(agitxt.getText().toString());
+                //hlth = Integer.parseInt(healthtxt.getText().toString());
 
                 sp = ((lvl - 9) / 2) + ((lvl > 54) ? 1 : 0) + ((lvl > 69) ? 1 : 0) + ((lvl > 79) ? 2 : 0);
                 ep = (lvl - 59) / 2;
 
                 switch (id) {
                     case R.id.btnFs:
-                        pdAtkMin = 3 + (tal + agi) / 40 + wpnAtkpwr1 + shelMinMix;
-                        pdAtkMax = 5 + (tal + agi) / 35 + wpnAtkpwr2 + shelMaxMix;
+                        pdAtkMin = teste.atkPwr1Fs(strg, tal, agi, wpnAtkpwr1, wpnAtkpwr2, shelMinMix);
+                        pdAtkMax = teste.atkPwr2Fs(tal, agi, wpnAtkpwr2, shelMaxMix);
                         hp = teste.hpFsMs(lvl, strg, hlth) + teste.addHp(amuletAddHp, ring1AddHp, ring2AddHp, shelHpAdd, shelHpBoost, bracHpMix, gauntHpMix, bootsHpMix, wpnHpMix, armorHpMix, shieldHpMix);
                         mp = teste.mpFsPsAsAss(lvl, sprt) + teste.addMp(amuletAddMp, ring1AddMp, ring2AddMp, shelMpAdd, shelMpBoost, bracMpMix, gauntMpMix, bootsMpMix, wpnMpMix, armorMpMix, shieldMpMix);
                         stm = teste.stmAll(lvl, strg, sprt, tal, hlth) + teste.addStm(amuletAddStm, ring1StmMix, ring1AddStm, ring2StmMix, ring2AddStm, bracStmMix, gauntStmMix, bootsStmMix, orbStmMix);
                         break;
                     case R.id.btnMs:
-                        pdAtkMin = teste.atkPwr1(tal, agi, wpnAtkpwr1, shelMinMix);
-                        pdAtkMax = teste.atkPwr2(tal, agi, wpnAtkpwr2, shelMaxMix);
+                        pdAtkMin = teste.atkPwr1Fs(strg, tal, agi, wpnAtkpwr1, wpnAtkpwr2, shelMinMix);
+                        pdAtkMax = teste.atkPwr2Fs(tal, agi, wpnAtkpwr2, shelMaxMix);
                         hp = teste.hpFsMs(lvl, strg, hlth) + teste.addHp(amuletAddHp, ring1AddHp, ring2AddHp, shelHpAdd, shelHpBoost, bracHpMix, gauntHpMix, bootsHpMix, wpnHpMix, armorHpMix, shieldHpMix);
                         mp = teste.mpMsKsAts(lvl, sprt) + teste.addMp(amuletAddMp, ring1AddMp, ring2AddMp, shelMpAdd, shelMpBoost, bracMpMix, gauntMpMix, bootsMpMix, wpnMpMix, armorMpMix, shieldMpMix);
                         stm = teste.stmAll(lvl, strg, sprt, tal, hlth) + teste.addStm(amuletAddStm, ring1StmMix, ring1AddStm, ring2StmMix, ring2AddStm, bracStmMix, gauntStmMix, bootsStmMix, orbStmMix);
                         break;
                     case R.id.btnPs:
-                        pdAtkMin = 3 + (tal + agi) / 40 + wpnAtkpwr1 + shelMinMix;
-                        pdAtkMax = 5 + (tal + agi) / 35 + wpnAtkpwr2 + shelMaxMix;
+                        pdAtkMin = teste.atkPwr1Fs(strg, tal, agi, wpnAtkpwr1, wpnAtkpwr2, shelMinMix);
+                        pdAtkMax = teste.atkPwr2Fs(tal, agi, wpnAtkpwr2, shelMaxMix);
                         hp = teste.hpPsKsAtsSS(lvl, strg, hlth) + teste.addHp(amuletAddHp, ring1AddHp, ring2AddHp, shelHpAdd, shelHpBoost, bracHpMix, gauntHpMix, bootsHpMix, wpnHpMix, armorHpMix, shieldHpMix);
                         mp = teste.mpFsPsAsAss(lvl, sprt) + teste.addMp(amuletAddMp, ring1AddMp, ring2AddMp, shelMpAdd, shelMpBoost, bracMpMix, gauntMpMix, bootsMpMix, wpnMpMix, armorMpMix, shieldMpMix);
                         stm = teste.stmAll(lvl, strg, sprt, tal, hlth) + teste.addStm(amuletAddStm, ring1StmMix, ring1AddStm, ring2StmMix, ring2AddStm, bracStmMix, gauntStmMix, bootsStmMix, orbStmMix);
                         break;
                     case R.id.btnAs:
-                        pdAtkMin = teste.atkPwr1(tal, agi, wpnAtkpwr1, shelMinMix);
-                        pdAtkMax = teste.atkPwr2(tal, agi, wpnAtkpwr2, shelMaxMix);
+                        pdAtkMin = teste.atkPwr1Fs(strg, tal, agi, wpnAtkpwr1, wpnAtkpwr2, shelMinMix);
+                        pdAtkMax = teste.atkPwr2Fs(tal, agi, wpnAtkpwr2, shelMaxMix);
                         hp = teste.hpAsAss(lvl, strg, hlth) + teste.addHp(amuletAddHp, ring1AddHp, ring2AddHp, shelHpAdd, shelHpBoost, bracHpMix, gauntHpMix, bootsHpMix, wpnHpMix, armorHpMix, shieldHpMix);
                         mp = teste.mpFsPsAsAss(lvl, sprt) + teste.addMp(amuletAddMp, ring1AddMp, ring2AddMp, shelMpAdd, shelMpBoost, bracMpMix, gauntMpMix, bootsMpMix, wpnMpMix, armorMpMix, shieldMpMix);
                         stm = teste.stmAll(lvl, strg, sprt, tal, hlth) + teste.addStm(amuletAddStm, ring1StmMix, ring1AddStm, ring2StmMix, ring2AddStm, bracStmMix, gauntStmMix, bootsStmMix, orbStmMix);
                         break;
                     case R.id.btnAss:
-                        pdAtkMin = teste.atkPwr1(tal, agi, wpnAtkpwr1, shelMinMix);
-                        pdAtkMax = teste.atkPwr2(tal, agi, wpnAtkpwr2, shelMaxMix);
+                        pdAtkMin = teste.atkPwr1Fs(strg, tal, agi, wpnAtkpwr1, wpnAtkpwr2, shelMinMix);
+                        pdAtkMax = teste.atkPwr2Fs(tal, agi, wpnAtkpwr2, shelMaxMix);
                         hp = teste.hpAsAss(lvl, strg, hlth) + teste.addHp(amuletAddHp, ring1AddHp, ring2AddHp, shelHpAdd, shelHpBoost, bracHpMix, gauntHpMix, bootsHpMix, wpnHpMix, armorHpMix, shieldHpMix);
                         mp = teste.mpFsPsAsAss(lvl, sprt) + teste.addMp(amuletAddMp, ring1AddMp, ring2AddMp, shelMpAdd, shelMpBoost, bracMpMix, gauntMpMix, bootsMpMix, wpnMpMix, armorMpMix, shieldMpMix);
                         stm = teste.stmAll(lvl, strg, sprt, tal, hlth) + teste.addStm(amuletAddStm, ring1StmMix, ring1AddStm, ring2StmMix, ring2AddStm, bracStmMix, gauntStmMix, bootsStmMix, orbStmMix);
                         break;
                     case R.id.btnMgs:
-                        pdAtkMin = teste.atkPwr1(tal, agi, wpnAtkpwr1, shelMinMix);
-                        pdAtkMax = teste.atkPwr2(tal, agi, wpnAtkpwr2, shelMaxMix);
-                        hp = teste.hpMgs(lvl, strg, hlth) + teste.addHp(amuletAddHp, ring1AddHp, ring2AddHp, shelHpAdd, shelHpBoost, bracHpMix, gauntHpMix, bootsHpMix, wpnHpMix, armorHpMix, shieldHpMix);
+                        pdAtkMin = teste.atkPwr1Fs(strg, tal, agi, wpnAtkpwr1, wpnAtkpwr2, shelMinMix);
+                        pdAtkMax = teste.atkPwr2Fs(tal, agi, wpnAtkpwr2, shelMaxMix);
+                        hp = teste.hpMgs(lvl, hlth) + teste.addHp(amuletAddHp, ring1AddHp, ring2AddHp, shelHpAdd, shelHpBoost, bracHpMix, gauntHpMix, bootsHpMix, wpnHpMix, armorHpMix, shieldHpMix);
                         mp = teste.mpPrsMgsSS(lvl, sprt) + teste.addMp(amuletAddMp, ring1AddMp, ring2AddMp, shelMpAdd, shelMpBoost, bracMpMix, gauntMpMix, bootsMpMix, wpnMpMix, armorMpMix, shieldMpMix);
                         stm = teste.stmAll(lvl, strg, sprt, tal, hlth) + teste.addStm(amuletAddStm, ring1StmMix, ring1AddStm, ring2StmMix, ring2AddStm, bracStmMix, gauntStmMix, bootsStmMix, orbStmMix);
                         break;
                     case R.id.btnKs:
-                        pdAtkMin = 3 + (tal + agi) / 40 + wpnAtkpwr1 + shelMinMix;
-                        pdAtkMax = 5 + (tal + agi) / 35 + wpnAtkpwr2 + shelMaxMix;
+                        pdAtkMin = teste.atkPwr1Fs(strg, tal, agi, wpnAtkpwr1, wpnAtkpwr2, shelMinMix);
+                        pdAtkMax = teste.atkPwr2Fs(tal, agi, wpnAtkpwr2, shelMaxMix);
                         hp = teste.hpPsKsAtsSS(lvl, strg, hlth) + teste.addHp(amuletAddHp, ring1AddHp, ring2AddHp, shelHpAdd, shelHpBoost, bracHpMix, gauntHpMix, bootsHpMix, wpnHpMix, armorHpMix, shieldHpMix);
                         mp = teste.mpMsKsAts(lvl, sprt) + teste.addMp(amuletAddMp, ring1AddMp, ring2AddMp, shelMpAdd, shelMpBoost, bracMpMix, gauntMpMix, bootsMpMix, wpnMpMix, armorMpMix, shieldMpMix);
                         stm = teste.stmAll(lvl, strg, sprt, tal, hlth) + teste.addStm(amuletAddStm, ring1StmMix, ring1AddStm, ring2StmMix, ring2AddStm, bracStmMix, gauntStmMix, bootsStmMix, orbStmMix);
                         break;
                     case R.id.btnSs:
-                        pdAtkMin = teste.atkPwr1(tal, agi, wpnAtkpwr1, shelMinMix);
-                        pdAtkMax = teste.atkPwr2(tal, agi, wpnAtkpwr2, shelMaxMix);
+                        pdAtkMin = teste.atkPwr1Fs(strg, tal, agi, wpnAtkpwr1, wpnAtkpwr2, shelMinMix);
+                        pdAtkMax = teste.atkPwr2Fs(tal, agi, wpnAtkpwr2, shelMaxMix);
                         hp = teste.hpPsKsAtsSS(lvl, strg, hlth) + teste.addHp(amuletAddHp, ring1AddHp, ring2AddHp, shelHpAdd, shelHpBoost, bracHpMix, gauntHpMix, bootsHpMix, wpnHpMix, armorHpMix, shieldHpMix);
                         mp = teste.mpPrsMgsSS(lvl, sprt) + teste.addMp(amuletAddMp, ring1AddMp, ring2AddMp, shelMpAdd, shelMpBoost, bracMpMix, gauntMpMix, bootsMpMix, wpnMpMix, armorMpMix, shieldMpMix);
                         stm = teste.stmAll(lvl, strg, sprt, tal, hlth) + teste.addStm(amuletAddStm, ring1StmMix, ring1AddStm, ring2StmMix, ring2AddStm, bracStmMix, gauntStmMix, bootsStmMix, orbStmMix);
                         break;
                     case R.id.btnPrs:
-                        pdAtkMin = teste.atkPwr1(tal, agi, wpnAtkpwr1, shelMinMix);
-                        pdAtkMax = teste.atkPwr2(tal, agi, wpnAtkpwr2, shelMaxMix);
-                        hp = teste.hpPrs(lvl, strg, hlth) + teste.addHp(amuletAddHp, ring1AddHp, ring2AddHp, shelHpAdd, shelHpBoost, bracHpMix, gauntHpMix, bootsHpMix, wpnHpMix, armorHpMix, shieldHpMix);
+                        pdAtkMin = teste.atkPwr1Fs(strg, tal, agi, wpnAtkpwr1, wpnAtkpwr2, shelMinMix);
+                        pdAtkMax = teste.atkPwr2Fs(tal, agi, wpnAtkpwr2, shelMaxMix);
+                        hp = teste.hpPrs(lvl, hlth) + teste.addHp(amuletAddHp, ring1AddHp, ring2AddHp, shelHpAdd, shelHpBoost, bracHpMix, gauntHpMix, bootsHpMix, wpnHpMix, armorHpMix, shieldHpMix);
                         mp = teste.mpPrsMgsSS(lvl, sprt) + teste.addMp(amuletAddMp, ring1AddMp, ring2AddMp, shelMpAdd, shelMpBoost, bracMpMix, gauntMpMix, bootsMpMix, wpnMpMix, armorMpMix, shieldMpMix);
                         stm = teste.stmAll(lvl, strg, sprt, tal, hlth) + teste.addStm(amuletAddStm, ring1StmMix, ring1AddStm, ring2StmMix, ring2AddStm, bracStmMix, gauntStmMix, bootsStmMix, orbStmMix);
                         break;
                     case R.id.btnAts:
-                        pdAtkMin = teste.atkPwr1(tal, agi, wpnAtkpwr1, shelMinMix);
-                        pdAtkMax = teste.atkPwr2(tal, agi, wpnAtkpwr2, shelMaxMix);
+                        pdAtkMin = teste.atkPwr1Fs(strg, tal, agi, wpnAtkpwr1, wpnAtkpwr2, shelMinMix);
+                        pdAtkMax = teste.atkPwr2Fs(tal, agi, wpnAtkpwr2, shelMaxMix);
                         hp = teste.hpPsKsAtsSS(lvl, strg, hlth) + teste.addHp(amuletAddHp, ring1AddHp, ring2AddHp, shelHpAdd, shelHpBoost, bracHpMix, gauntHpMix, bootsHpMix, wpnHpMix, armorHpMix, shieldHpMix);
                         mp = teste.mpMsKsAts(lvl, sprt) + teste.addMp(amuletAddMp, ring1AddMp, ring2AddMp, shelMpAdd, shelMpBoost, bracMpMix, gauntMpMix, bootsMpMix, wpnMpMix, armorMpMix, shieldMpMix);
                         stm = teste.stmAll(lvl, strg, sprt, tal, hlth) + teste.addStm(amuletAddStm, ring1StmMix, ring1AddStm, ring2StmMix, ring2AddStm, bracStmMix, gauntStmMix, bootsStmMix, orbStmMix);
                         break;
                 }
 
-                atkRtg = teste.calcAtkRtg(lvl, agi, tal, wpnAtkRtg, bracAtk, bracSpec, ring1AtkRtg, ring2AtkRtg);
-                def = teste.calcDef(lvl, agi, tal, armorDef, armorDefAdd, gauntDef, gauntDefAdd, bracDef, bootsDef, bootsDefAdd, shieldDef, shieldDefAdd, ring1Def,
-                        ring2Def, shelDefMix);
-                abs = teste.calcAbs(def, strg, sprt, tal, agi, hlth, lvl, ring1Abs, ring2Abs, gauntAbs, gauntAbsAdd, bootsAbs, bootsAbsAdd, armorAbs,
-                        armorAbsAdd, shieldAbs, shieldAbsAdd);
-                spd = teste.calcSpd(hlth, tal, lvl, bootsSpd, bootsSpdAdd);
-                weight = teste.calcWeight(strg, hlth, lvl, sprt, agi);
+                // atkRtg = teste.calcAtkRtg(lvl, agi, tal, wpnAtkRtg, bracAtk, bracSpec, ring1AtkRtg, ring2AtkRtg);
+                // def = teste.calcDef(lvl, agi, tal, armorDef, armorDefAdd, gauntDef, gauntDefAdd, bracDef, bootsDef, bootsDefAdd, shieldDef, shieldDefAdd, ring1Def,
+                //         ring2Def, shelDefMix);
+                // abs = teste.calcAbs(def, strg, sprt, tal, agi, hlth, lvl, ring1Abs, ring2Abs, gauntAbs, gauntAbsAdd, bootsAbs, bootsAbsAdd, armorAbs,
+                //         armorAbsAdd, shieldAbs, shieldAbsAdd);
+                // spd = teste.calcSpd(hlth, tal, lvl, bootsSpd, bootsSpdAdd);
+                // weight = teste.calcWeight(strg, hlth, lvl, sprt, agi);
 
                 texto = "your lvl: " + lvl +
                         "\natkRtg " + atkRtg +
@@ -314,6 +314,7 @@ public class MainActivity extends AppCompatActivity {
                 taltxt.setText("21");
                 agitxt.setText("17");
                 healthtxt.setText("27");
+                lvlText.requestFocus();
                 break;
             case R.id.btnMs:
                 strgtxt.setText("24");
@@ -321,6 +322,7 @@ public class MainActivity extends AppCompatActivity {
                 taltxt.setText("25");
                 agitxt.setText("18");
                 healthtxt.setText("24");
+                lvlText.requestFocus();
                 break;
             case R.id.btnPs:
                 strgtxt.setText("26");
@@ -328,6 +330,7 @@ public class MainActivity extends AppCompatActivity {
                 taltxt.setText("20");
                 agitxt.setText("19");
                 healthtxt.setText("25");
+                lvlText.requestFocus();
                 break;
             case R.id.btnAs:
                 strgtxt.setText("17");
@@ -335,6 +338,7 @@ public class MainActivity extends AppCompatActivity {
                 taltxt.setText("21");
                 agitxt.setText("27");
                 healthtxt.setText("23");
+                lvlText.requestFocus();
                 break;
             case R.id.btnAss:
                 strgtxt.setText("25");
@@ -342,6 +346,7 @@ public class MainActivity extends AppCompatActivity {
                 taltxt.setText("22");
                 agitxt.setText("20");
                 healthtxt.setText("22");
+                lvlText.requestFocus();
                 break;
             case R.id.btnMgs:
                 strgtxt.setText("16");
@@ -349,6 +354,7 @@ public class MainActivity extends AppCompatActivity {
                 taltxt.setText("19");
                 agitxt.setText("14");
                 healthtxt.setText("21");
+                lvlText.requestFocus();
                 break;
             case R.id.btnKs:
                 strgtxt.setText("26");
@@ -356,6 +362,7 @@ public class MainActivity extends AppCompatActivity {
                 taltxt.setText("17");
                 agitxt.setText("19");
                 healthtxt.setText("24");
+                lvlText.requestFocus();
                 break;
             case R.id.btnSs:
                 strgtxt.setText("15");
@@ -363,6 +370,7 @@ public class MainActivity extends AppCompatActivity {
                 taltxt.setText("20");
                 agitxt.setText("15");
                 healthtxt.setText("22");
+                lvlText.requestFocus();
                 break;
             case R.id.btnPrs:
                 strgtxt.setText("15");
@@ -370,6 +378,7 @@ public class MainActivity extends AppCompatActivity {
                 taltxt.setText("21");
                 agitxt.setText("15");
                 healthtxt.setText("20");
+                lvlText.requestFocus();
                 break;
             case R.id.btnAts:
                 strgtxt.setText("23");

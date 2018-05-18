@@ -113,218 +113,1817 @@
                     android:id="@+id/txt1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="120dp"
                     android:text="Level: "
-                    android:textSize="@dimen/sizeText" />
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintLeft_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
                     android:id="@+id/levelText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
                     android:ems="3"
+                    android:inputType="number"
                     android:text="0"
                     android:textSize="@dimen/sizeEdit"
-                    app:layout_constraintLeft_toRightOf="@+id/txt1"/>
+                    app:layout_constraintLeft_toRightOf="@+id/txt1"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/txt2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="0"
-                    android:layout_row="1"
+                    android:layout_marginTop="18dp"
                     android:text="Strength: "
                     android:textSize="@dimen/sizeText"
-                    app:layout_constraintTop_toBottomOf="@id/txt1"/>
+                    app:layout_constraintTop_toBottomOf="@id/txt1" />
 
                 <EditText
                     android:id="@+id/strgTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:layout_row="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
                     android:ems="3"
                     android:inputType="number"
                     android:text="0"
                     android:textSize="@dimen/sizeEdit"
-                    app:layout_constraintLeft_toRightOf="@id/txt2"/>
+                    app:layout_constraintLeft_toRightOf="@id/txt2"
+                    app:layout_constraintTop_toBottomOf="@id/levelText" />
 
                 <TextView
                     android:id="@+id/txt3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="2"
-                    android:layout_row="1"
+                    android:layout_marginTop="50dp"
                     android:text="Spirit: "
                     android:textSize="@dimen/sizeText"
-                    app:layout_constraintLeft_toRightOf="@id/strgTxt"/>
+                    app:layout_constraintLeft_toRightOf="@id/strgTxt"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
                     android:id="@+id/sprtText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="3"
-                    android:layout_row="1"
+                    android:layout_marginTop="43dp"
                     android:ems="3"
                     android:inputType="number"
                     android:text="0"
                     android:textSize="@dimen/sizeEdit"
-                    app:layout_constraintLeft_toRightOf="@id/txt3"/>
+                    app:layout_constraintLeft_toRightOf="@id/txt3"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/txt4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="0"
-                    android:layout_row="2"
+                    android:layout_marginTop="50dp"
                     android:text="Talent: "
-                    android:textSize="@dimen/sizeText" />
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintLeft_toRightOf="@id/sprtText"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
                     android:id="@+id/talText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:layout_row="2"
+                    android:layout_marginTop="43dp"
                     android:ems="3"
                     android:inputType="number"
                     android:text="0"
-                    android:textSize="@dimen/sizeEdit" />
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt4"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/txt5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="2"
-                    android:layout_row="2"
+                    android:layout_marginTop="18dp"
                     android:text="Agility: "
-                    android:textSize="@dimen/sizeText" />
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintTop_toBottomOf="@id/txt2" />
 
                 <EditText
                     android:id="@+id/agiText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="3"
-                    android:layout_row="2"
+                    android:layout_marginLeft="10dp"
                     android:ems="3"
                     android:inputType="number"
                     android:text="0"
-                    android:textSize="@dimen/sizeEdit" />
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt5"
+                    app:layout_constraintTop_toBottomOf="@id/strgTxt" />
 
                 <TextView
+                    android:id="@+id/txt6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="0"
-                    android:layout_row="3"
+                    android:layout_marginTop="18dp"
                     android:text="Health: "
-                    android:textSize="@dimen/sizeText" />
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintLeft_toRightOf="@id/agiText"
+                    app:layout_constraintTop_toBottomOf="@id/txt3" />
 
                 <EditText
                     android:id="@+id/healthText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:layout_row="3"
                     android:ems="3"
                     android:inputType="number"
                     android:text="0"
-                    android:textSize="@dimen/sizeEdit" />
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt6"
+                    app:layout_constraintTop_toBottomOf="@id/sprtText" />
 
                 <TextView
                     android:id="@+id/pointsLeft"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="2"
-                    android:layout_row="3"
+                    android:layout_marginTop="18dp"
                     android:text="Left Pts:"
-                    android:textSize="@dimen/sizeText" />
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintLeft_toRightOf="@id/healthText"
+                    app:layout_constraintTop_toBottomOf="@id/txt4" />
 
                 <EditText
                     android:id="@+id/leftPtsTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="3"
-                    android:layout_row="3"
                     android:ems="3"
                     android:inputType="number"
                     android:text="0"
-                    android:textSize="@dimen/sizeEdit" />
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/pointsLeft"
+                    app:layout_constraintTop_toBottomOf="@id/talText" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="2"
-                    android:layout_row="4"
+                    android:layout_marginLeft="145dp"
+                    android:layout_marginTop="20dp"
                     android:text="Amulet"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt6" />
 
                 <TextView
+                    android:id="@+id/txt7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="0"
-                    android:layout_row="5"
-                    android:text="Hp Add: "
-                    android:textSize="@dimen/sizeText" />
+                    android:layout_marginTop="55dp"
+                    android:text="Hp Reg: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintTop_toBottomOf="@id/txt5" />
 
                 <EditText
                     android:id="@+id/amulet0Txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="1"
+                    android:layout_marginTop="35dp"
                     android:ems="3"
                     android:inputType="number"
                     android:text="0"
-                    android:textSize="@dimen/sizeEdit" />
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt7"
+                    app:layout_constraintTop_toBottomOf="@id/agiText" />
 
                 <TextView
+                    android:id="@+id/txt8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Spec: "
-                    android:textSize="@dimen/sizeText"/>
+                    android:layout_marginTop="55dp"
+                    android:text="Mp Reg: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintLeft_toRightOf="@id/amulet0Txt"
+                    app:layout_constraintTop_toBottomOf="@id/txt6" />
 
                 <EditText
                     android:id="@+id/amulet1Txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="3"
+                    android:layout_marginTop="35dp"
                     android:ems="3"
                     android:inputType="number"
                     android:text="0"
-                    android:textSize="@dimen/sizeEdit" />
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt8"
+                    app:layout_constraintTop_toBottomOf="@id/healthText" />
 
                 <TextView
+                    android:id="@+id/txt9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="0"
-                    android:layout_marginTop="4dp"
-                    android:layout_row="6"
-                    android:text="Mp Add: "
-                    android:textSize="@dimen/sizeText" />
+                    android:layout_marginTop="55dp"
+                    android:text="Stm Reg: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintLeft_toRightOf="@id/amulet1Txt"
+                    app:layout_constraintTop_toBottomOf="@id/pointsLeft" />
 
                 <EditText
                     android:id="@+id/amulet2Txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="35dp"
                     android:ems="3"
                     android:inputType="number"
                     android:text="0"
-                    android:textSize="@dimen/sizeEdit" />
-
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt9"
+                    app:layout_constraintTop_toBottomOf="@id/leftPtsTxt" />
 
                 <TextView
+                    android:id="@+id/txt10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Spec: "
-                    android:textSize="@dimen/sizeText"/>
+                    android:text="Hp Add: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt7"
+                    />
 
                 <EditText
                     android:id="@+id/amulet3Txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="3"
                     android:ems="3"
                     android:inputType="number"
                     android:text="0"
-                    android:textSize="@dimen/sizeEdit" />
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintTop_toBottomOf="@id/amulet0Txt"
+                    app:layout_constraintLeft_toRightOf="@id/txt10"/>
 
+                <TextView
+                    android:id="@+id/txt11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Mp Add: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintTop_toBottomOf="@id/txt8"
+                    app:layout_constraintLeft_toRightOf="@id/amulet3Txt"/>
+
+                <EditText
+                    android:id="@+id/amulet4Txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintTop_toBottomOf="@id/amulet1Txt"
+                    app:layout_constraintLeft_toRightOf="@id/txt11"/>
+
+                <TextView
+                    android:id="@+id/txt12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Stm Add: "
+                    app:layout_constraintLeft_toRightOf="@id/amulet4Txt"
+                    app:layout_constraintTop_toBottomOf="@id/txt9"
+                    android:textSize="@dimen/sizeText" />
+
+                <EditText
+                    android:id="@+id/amulet5Txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt12"
+                    app:layout_constraintTop_toBottomOf="@id/amulet2Txt"/>
+
+                <TextView
+                    android:id="@+id/txt13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Hp Recovery: "
+                    app:layout_constraintTop_toBottomOf="@id/txt10"
+                    android:textSize="@dimen/sizeText" />
+
+                <EditText
+                    android:id="@+id/amulet6Txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintTop_toBottomOf="@id/amulet3Txt"
+                    app:layout_constraintLeft_toRightOf="@id/txt13"/>
+
+                <TextView
+                    android:id="@+id/txt14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Mp Recovery: "
+                    app:layout_constraintLeft_toRightOf="@id/amulet6Txt"
+                    app:layout_constraintTop_toBottomOf="@id/txt11"
+                    android:textSize="@dimen/sizeText" />
+
+                <EditText
+                    android:id="@+id/amulet7Txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt14"
+                    app:layout_constraintTop_toBottomOf="@id/amulet5Txt"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Left Ring"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="145dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt14"/>
+
+                <TextView
+                    android:id="@+id/txt15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="55dp"
+                    android:text="Def Rate: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintTop_toBottomOf="@id/txt13" />
+
+                <EditText
+                    android:id="@+id/ring1Txt0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="@dimen/sizeEdit"
+                    android:layout_marginTop="35dp"
+                    app:layout_constraintLeft_toRightOf="@id/txt15"
+                    app:layout_constraintTop_toBottomOf="@id/amulet6Txt"/>
+
+                <TextView
+                    android:id="@+id/txt16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Atk Rate: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="55dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt13"
+                    app:layout_constraintLeft_toRightOf="@id/ring1Txt0" />
+
+                <EditText
+                    android:id="@+id/ring1Txt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    android:layout_marginTop="35dp"
+                    app:layout_constraintLeft_toRightOf="@id/txt16"
+                    app:layout_constraintTop_toBottomOf="@id/amulet6Txt"/>
+
+
+                <TextView
+                    android:id="@+id/txt17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="55dp"
+                    android:text="Abs Rate: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintTop_toBottomOf="@id/txt14"
+                    app:layout_constraintLeft_toRightOf="@id/ring1Txt1"/>
+
+                <EditText
+                    android:id="@+id/ring1Txt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    android:layout_marginTop="35dp"
+                    app:layout_constraintLeft_toRightOf="@id/txt17"
+                    app:layout_constraintTop_toBottomOf="@id/amulet6Txt"/>
+
+                <TextView
+                    android:id="@+id/txt18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Hp Reg: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintTop_toBottomOf="@id/txt15"/>
+
+                <EditText
+                    android:id="@+id/ring1Txt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt18"
+                    app:layout_constraintTop_toBottomOf="@id/ring1Txt0"/>
+
+                <TextView
+                    android:id="@+id/txt19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Mp Reg: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintLeft_toRightOf="@id/ring1Txt3"
+                    app:layout_constraintTop_toBottomOf="@id/txt16"/>
+
+                <EditText
+                    android:id="@+id/ring1Txt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_gravity="center_horizontal"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt19"
+                    app:layout_constraintTop_toBottomOf="@id/ring1Txt1"/>
+
+                <TextView
+                    android:id="@+id/txt20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Stm Reg: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintLeft_toRightOf="@id/ring1Txt4"
+                    app:layout_constraintTop_toBottomOf="@id/txt17"/>
+
+                <EditText
+                    android:id="@+id/ring1Txt5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintTop_toBottomOf="@id/ring1Txt2"
+                    app:layout_constraintLeft_toRightOf="@id/txt20"/>
+
+                <TextView
+                    android:id="@+id/txt21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Hp Add: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintTop_toBottomOf="@id/txt18"/>
+
+                <EditText
+                    android:id="@+id/ring1Txt6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintTop_toBottomOf="@id/ring1Txt3"
+                    app:layout_constraintLeft_toRightOf="@id/txt21"/>
+
+                <TextView
+                    android:id="@+id/txt22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Mp Add: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintTop_toBottomOf="@id/txt19"
+                    app:layout_constraintLeft_toRightOf="@id/ring1Txt6"/>
+
+                <EditText
+                    android:id="@+id/ring1Txt7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintTop_toBottomOf="@id/ring1Txt4"
+                    app:layout_constraintLeft_toRightOf="@id/txt22"/>
+
+                <TextView
+                    android:id="@+id/txt23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Stm Add: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintTop_toBottomOf="@id/txt20"
+                    app:layout_constraintLeft_toRightOf="@id/ring1Txt7"/>
+
+                <EditText
+                    android:id="@+id/ring1Txt8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintTop_toBottomOf="@id/ring1Txt5"
+                    app:layout_constraintLeft_toRightOf="@id/txt23"/>
+
+                <TextView
+                    android:id="@+id/txt24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Hp Regen: "
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_marginLeft="120dp"
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintTop_toBottomOf="@id/txt21"/>
+
+                <EditText
+                    android:id="@+id/ring1Txt9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintTop_toBottomOf="@id/ring1Txt7"
+                    app:layout_constraintLeft_toRightOf="@id/txt24"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="145dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Right Ring"
+                    android:textSize="20dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt24"/>
+
+                <TextView
+                    android:id="@+id/txt25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="55dp"
+                    android:text="Def Rate: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintTop_toBottomOf="@id/txt24" />
+
+                <EditText
+                    android:id="@+id/ring2Txt0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="@dimen/sizeEdit"
+                    android:layout_marginTop="35dp"
+                    app:layout_constraintLeft_toRightOf="@id/txt25"
+                    app:layout_constraintTop_toBottomOf="@id/ring1Txt9"/>
+
+                <TextView
+                    android:id="@+id/txt26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Atk Rate: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="55dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt24"
+                    app:layout_constraintLeft_toRightOf="@id/ring2Txt0" />
+
+                <EditText
+                    android:id="@+id/ring2Txt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    android:layout_marginTop="35dp"
+                    app:layout_constraintLeft_toRightOf="@id/txt26"
+                    app:layout_constraintTop_toBottomOf="@id/ring1Txt9"/>
+
+                <TextView
+                    android:id="@+id/txt27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="55dp"
+                    android:text="Abs Rate: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintTop_toBottomOf="@id/txt24"
+                    app:layout_constraintLeft_toRightOf="@id/ring2Txt1"/>
+
+                <EditText
+                    android:id="@+id/ring2Txt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    android:layout_marginTop="35dp"
+                    app:layout_constraintLeft_toRightOf="@id/txt27"
+                    app:layout_constraintTop_toBottomOf="@id/ring1Txt9"/>
+
+                <TextView
+                    android:id="@+id/txt28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Hp Reg: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintTop_toBottomOf="@id/txt25"/>
+
+                <EditText
+                    android:id="@+id/ring2Txt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt28"
+                    app:layout_constraintTop_toBottomOf="@id/ring2Txt0"/>
+
+                <TextView
+                    android:id="@+id/txt29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Mp Reg: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintLeft_toRightOf="@id/ring2Txt3"
+                    app:layout_constraintTop_toBottomOf="@id/txt26"/>
+
+                <EditText
+                    android:id="@+id/ring2Txt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt29"
+                    app:layout_constraintTop_toBottomOf="@id/ring2Txt1"/>
+
+                <TextView
+                    android:id="@+id/txt30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Stm Reg: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintLeft_toRightOf="@id/ring2Txt4"
+                    app:layout_constraintTop_toBottomOf="@id/txt27"/>
+
+                <EditText
+                    android:id="@+id/ring2Txt5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintTop_toBottomOf="@id/ring2Txt2"
+                    app:layout_constraintLeft_toRightOf="@id/txt30"/>
+
+                <TextView
+                    android:id="@+id/txt31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Hp Add: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintTop_toBottomOf="@id/txt28"/>
+
+                <EditText
+                    android:id="@+id/ring2Txt6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintTop_toBottomOf="@id/ring2Txt3"
+                    app:layout_constraintLeft_toRightOf="@id/txt31"/>
+
+                <TextView
+                    android:id="@+id/txt32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Mp Add: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintTop_toBottomOf="@id/txt29"
+                    app:layout_constraintLeft_toRightOf="@id/ring2Txt6"/>
+
+                <EditText
+                    android:id="@+id/ring2Txt7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintTop_toBottomOf="@id/ring2Txt4"
+                    app:layout_constraintLeft_toRightOf="@id/txt32"/>
+
+                <TextView
+                    android:id="@+id/txt33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Stm Add: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintTop_toBottomOf="@id/txt30"
+                    app:layout_constraintLeft_toRightOf="@id/ring2Txt7"/>
+
+                <EditText
+                    android:id="@+id/ring2Txt8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintTop_toBottomOf="@id/ring2Txt5"
+                    app:layout_constraintLeft_toRightOf="@id/txt33"/>
+
+                <TextView
+                    android:id="@+id/txt34"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Hp Regen: "
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_marginLeft="120dp"
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintTop_toBottomOf="@id/txt31"/>
+
+                <EditText
+                    android:id="@+id/ring2Txt9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintTop_toBottomOf="@id/ring2Txt7"
+                    app:layout_constraintLeft_toRightOf="@id/txt34"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="155dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Sheltom"
+                    android:textSize="20dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt34"/>
+
+                <TextView
+                    android:id="@+id/txt35"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="55dp"
+                    android:text="Def Rate: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintTop_toBottomOf="@id/txt34" />
+
+                <EditText
+                    android:id="@+id/shelTxt0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="@dimen/sizeEdit"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintLeft_toRightOf="@id/txt35"
+                    app:layout_constraintTop_toBottomOf="@id/ring2Txt9"/>
+
+                <TextView
+                    android:id="@+id/txt36"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Atk Min: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="55dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt34"
+                    app:layout_constraintLeft_toRightOf="@id/ring1Txt0" />
+
+                <EditText
+                    android:id="@+id/shelTxt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintLeft_toRightOf="@id/txt36"
+                    app:layout_constraintTop_toBottomOf="@id/ring2Txt9"/>
+
+
+                <TextView
+                    android:id="@+id/txt37"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="55dp"
+                    android:text="Atk Max: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintTop_toBottomOf="@id/txt34"
+                    app:layout_constraintLeft_toRightOf="@id/shelTxt1"/>
+
+                <EditText
+                    android:id="@+id/shelTxt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintLeft_toRightOf="@id/txt37"
+                    app:layout_constraintTop_toBottomOf="@id/ring2Txt9"/>
+
+                <TextView
+                    android:id="@+id/txt38"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Hp Reg: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintTop_toBottomOf="@id/txt35" />
+
+                <EditText
+                    android:id="@+id/shelTxt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt38"
+                    app:layout_constraintTop_toBottomOf="@id/shelTxt0"/>
+
+                <TextView
+                    android:id="@+id/txt39"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hp Add: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt36"
+                    app:layout_constraintLeft_toRightOf="@id/shelTxt3" />
+
+                <EditText
+                    android:id="@+id/shelTxt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt39"
+                    app:layout_constraintTop_toBottomOf="@id/shelTxt1"/>
+
+                <TextView
+                    android:id="@+id/txt40"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hp Recovery: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt37"
+                    app:layout_constraintLeft_toRightOf="@id/shelTxt4" />
+
+                <EditText
+                    android:id="@+id/shelTxt5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt40"
+                    app:layout_constraintTop_toBottomOf="@id/shelTxt2"/>
+
+                <TextView
+                    android:id="@+id/txt41"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Mp Reg: "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintTop_toBottomOf="@id/txt38" />
+
+                <EditText
+                    android:id="@+id/shelTxt6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt41"
+                    app:layout_constraintTop_toBottomOf="@id/shelTxt3"/>
+
+                <TextView
+                    android:id="@+id/txt42"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mp Add: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt39"
+                    app:layout_constraintLeft_toRightOf="@id/shelTxt3" />
+
+                <EditText
+                    android:id="@+id/shelTxt7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt42"
+                    app:layout_constraintTop_toBottomOf="@id/shelTxt4"/>
+
+                <TextView
+                    android:id="@+id/txt43"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mp Recovery: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt40"
+                    app:layout_constraintLeft_toRightOf="@id/shelTxt4" />
+
+                <EditText
+                    android:id="@+id/shelTxt8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt40"
+                    app:layout_constraintTop_toBottomOf="@id/shelTxt5"/>
+
+                <TextView
+                    android:id="@+id/txt44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Hp Boost: LVL/ "
+                    android:textSize="@dimen/sizeText"
+                    app:layout_constraintTop_toBottomOf="@id/txt41" />
+
+                <EditText
+                    android:id="@+id/shelTxt9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:inputType="number"
+                    android:text="0"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt44"
+                    app:layout_constraintTop_toBottomOf="@id/shelTxt6"/>
+
+                <TextView
+                    android:id="@+id/txt45"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mp Boost: LVL/ "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt43"
+                    app:layout_constraintLeft_toRightOf="@id/shelTxt9" />
+
+                <EditText
+                    android:id="@+id/shelTxt10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt45"
+                    app:layout_constraintTop_toBottomOf="@id/shelTxt8"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="155dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Bracelets"
+                    android:textSize="20dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt45"/>
+
+                <TextView
+                    android:id="@+id/txt46"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Def Rtg: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="58dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt44" />
+
+                <EditText
+                    android:id="@+id/bracTxt0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:layout_marginTop="38dp"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt46"
+                    app:layout_constraintTop_toBottomOf="@id/shelTxt9"/>
+
+                <TextView
+                    android:id="@+id/txt47"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Atk Rtg: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="58dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt44"
+                    app:layout_constraintLeft_toRightOf="@id/bracTxt0"/>
+
+                <EditText
+                    android:id="@+id/bracTxt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:layout_marginTop="38dp"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt47"
+                    app:layout_constraintTop_toBottomOf="@id/shelTxt9"/>
+
+                <TextView
+                    android:id="@+id/txt48"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hp Add: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt46" />
+
+                <EditText
+                    android:id="@+id/bracTxt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt46"
+                    app:layout_constraintTop_toBottomOf="@id/bracTxt0"/>
+
+                <TextView
+                    android:id="@+id/txt49"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mp Add: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt47"
+                    app:layout_constraintLeft_toRightOf="@id/bracTxt2"/>
+
+                <EditText
+                    android:id="@+id/bracTxt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt47"
+                    app:layout_constraintTop_toBottomOf="@id/bracTxt1"/>
+
+                <TextView
+                    android:id="@+id/txt50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stm Add: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt47"
+                    app:layout_constraintLeft_toRightOf="@id/bracTxt3"/>
+
+                <EditText
+                    android:id="@+id/bracTxt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt50"
+                    app:layout_constraintTop_toBottomOf="@id/bracTxt1"/>
+
+                <TextView
+                    android:id="@+id/txt51"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spec Atk: LVL/ "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt48"/>
+
+                <EditText
+                    android:id="@+id/bracTxt5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt51"
+                    app:layout_constraintTop_toBottomOf="@id/bracTxt3"/>
+
+                <TextView
+                    android:id="@+id/txt52"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spec Crt%: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt49"
+                    app:layout_constraintLeft_toRightOf="@id/bracTxt5"/>
+
+                <EditText
+                    android:id="@+id/bracTxt6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt52"
+                    app:layout_constraintTop_toBottomOf="@id/bracTxt4"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="155dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Gauntlets"
+                    android:textSize="20dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt52"/>
+
+                <TextView
+                    android:id="@+id/txt53"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Defense: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="53dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt51"/>
+
+                <EditText
+                    android:id="@+id/gauntTxt0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:layout_marginTop="38dp"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt53"
+                    app:layout_constraintTop_toBottomOf="@id/bracTxt5"/>
+
+                <TextView
+                    android:id="@+id/txt54"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Absorb: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="53dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt52"
+                    app:layout_constraintLeft_toRightOf="@id/gauntTxt0"/>
+
+                <EditText
+                    android:id="@+id/gauntTxt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:layout_marginTop="38dp"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt54"
+                    app:layout_constraintTop_toBottomOf="@id/bracTxt5"/>
+
+                <TextView
+                    android:id="@+id/txt55"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spec Def: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt53"/>
+
+                <EditText
+                    android:id="@+id/gauntTxt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt55"
+                    app:layout_constraintTop_toBottomOf="@id/gauntTxt0"/>
+
+                <TextView
+                    android:id="@+id/txt56"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spec Abs: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt54"
+                    app:layout_constraintLeft_toRightOf="@id/gauntTxt2"/>
+
+                <EditText
+                    android:id="@+id/gauntTxt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt56"
+                    app:layout_constraintTop_toBottomOf="@id/gauntTxt1"/>
+
+                <TextView
+                    android:id="@+id/txt57"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Atk: LVL/ "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt54"
+                    app:layout_constraintLeft_toRightOf="@id/gauntTxt3"/>
+
+                <EditText
+                    android:id="@+id/gauntTxt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt57"
+                    app:layout_constraintTop_toBottomOf="@id/gauntTxt1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="155dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Boots"
+                    android:textSize="20dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt56"/>
+
+                <TextView
+                    android:id="@+id/txt58"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Defense: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="53dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt55"/>
+
+                <EditText
+                    android:id="@+id/bootsTxt0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:layout_marginTop="32dp"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt58"
+                    app:layout_constraintTop_toBottomOf="@id/gauntTxt2"/>
+
+                <TextView
+                    android:id="@+id/txt59"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Absorb: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="53dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt56"
+                    app:layout_constraintLeft_toRightOf="@id/bootsTxt0"/>
+
+                <EditText
+                    android:id="@+id/bootsTxt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:layout_marginTop="32dp"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt59"
+                    app:layout_constraintTop_toBottomOf="@id/gauntTxt3"/>
+
+                <TextView
+                    android:id="@+id/txt60"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Speed: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="53dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt57"
+                    app:layout_constraintLeft_toRightOf="@id/bootsTxt1"/>
+
+                <EditText
+                    android:id="@+id/bootsTxt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:layout_marginTop="32dp"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt60"
+                    app:layout_constraintTop_toBottomOf="@id/gauntTxt4"/>
+
+                <TextView
+                    android:id="@+id/txt61"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Hp: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt58"/>
+
+                <EditText
+                    android:id="@+id/bootsTxt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt61"
+                    app:layout_constraintTop_toBottomOf="@id/bootsTxt0"/>
+
+                <TextView
+                    android:id="@+id/txt62"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Mp: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt59"
+                    app:layout_constraintLeft_toRightOf="@id/bootsTxt3"/>
+
+                <EditText
+                    android:id="@+id/bootsTxt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt62"
+                    app:layout_constraintTop_toBottomOf="@id/bootsTxt1"/>
+
+                <TextView
+                    android:id="@+id/txt63"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Stm: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt60"
+                    app:layout_constraintLeft_toRightOf="@id/bootsTxt4"/>
+
+                <EditText
+                    android:id="@+id/bootsTxt5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt63"
+                    app:layout_constraintTop_toBottomOf="@id/bootsTxt2"/>
+
+                <TextView
+                    android:id="@+id/txt64"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spec Def: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt61"/>
+
+                <EditText
+                    android:id="@+id/bootsTxt6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt64"
+                    app:layout_constraintTop_toBottomOf="@id/bootsTxt3"/>
+
+                <TextView
+                    android:id="@+id/txt65"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spec Abs: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt62"
+                    app:layout_constraintLeft_toRightOf="@id/bootsTxt6"/>
+
+                <EditText
+                    android:id="@+id/bootsTxt7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt65"
+                    app:layout_constraintTop_toBottomOf="@id/bootsTxt4"/>
+
+                <TextView
+                    android:id="@+id/txt66"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Evade: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt63"
+                    app:layout_constraintLeft_toRightOf="@id/bootsTxt7"/>
+
+                <EditText
+                    android:id="@+id/bootsTxt8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt66"
+                    app:layout_constraintTop_toBottomOf="@id/bootsTxt5"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="155dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Weapon"
+                    android:textSize="20dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt65"/>
+
+                <TextView
+                    android:id="@+id/txt67"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Atk Min: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="53dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt64"/>
+
+                <EditText
+                    android:id="@+id/wpnTxt0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    android:layout_marginTop="38dp"
+                    app:layout_constraintLeft_toRightOf="@id/txt67"
+                    app:layout_constraintTop_toBottomOf="@id/bootsTxt6"/>
+
+                <TextView
+                    android:id="@+id/txt68"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Atk Max: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="53dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt65"
+                    app:layout_constraintLeft_toRightOf="@id/wpnTxt0"/>
+
+                <EditText
+                    android:id="@+id/wpnTxt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    android:layout_marginTop="38dp"
+                    app:layout_constraintLeft_toRightOf="@id/txt68"
+                    app:layout_constraintTop_toBottomOf="@id/bootsTxt7"/>
+
+                <TextView
+                    android:id="@+id/txt69"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Atk Rtg: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="53dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt66"
+                    app:layout_constraintLeft_toRightOf="@id/wpnTxt1"/>
+
+                <EditText
+                    android:id="@+id/wpnTxt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    android:layout_marginTop="38dp"
+                    app:layout_constraintLeft_toRightOf="@id/txt69"
+                    app:layout_constraintTop_toBottomOf="@id/bootsTxt8"/>
+
+                <TextView
+                    android:id="@+id/txt70"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Critical: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt67"/>
+
+                <EditText
+                    android:id="@+id/wpnTxt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt70"
+                    app:layout_constraintTop_toBottomOf="@id/wpnTxt0"/>
+
+                <TextView
+                    android:id="@+id/txt71"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Block: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt68"
+                    app:layout_constraintLeft_toRightOf="@id/wpnTxt3"/>
+
+                <EditText
+                    android:id="@+id/wpnTxt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt71"
+                    app:layout_constraintTop_toBottomOf="@id/wpnTxt1"/>
+
+                <TextView
+                    android:id="@+id/txt72"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Hp: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt70"/>
+
+                <EditText
+                    android:id="@+id/wpnTxt5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt72"
+                    app:layout_constraintTop_toBottomOf="@id/wpnTxt3"/>
+
+                <TextView
+                    android:id="@+id/txt73"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Mp: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt71"
+                    app:layout_constraintLeft_toRightOf="@id/wpnTxt5"/>
+
+                <EditText
+                    android:id="@+id/wpnTxt6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt73"
+                    app:layout_constraintTop_toBottomOf="@id/wpnTxt4"/>
+
+                <TextView
+                    android:id="@+id/txt74"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Atk Pwr: LVL/ "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt71"
+                    app:layout_constraintLeft_toRightOf="@id/wpnTxt6"/>
+
+                <EditText
+                    android:id="@+id/wpnTxt7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt74"
+                    app:layout_constraintTop_toBottomOf="@id/wpnTxt3"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="145dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Armor/Robe"
+                    android:textSize="20dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt74"/>
+
+                <TextView
+                    android:id="@+id/txt75"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Defense: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="53dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt73" />
+
+                <EditText
+                    android:id="@+id/armorTxt0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:layout_marginTop="38dp"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt75"
+                    app:layout_constraintTop_toBottomOf="@id/wpnTxt5"/>
+
+                <TextView
+                    android:id="@+id/txt76"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Absorb: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="53dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt73"
+                    app:layout_constraintLeft_toRightOf="@id/armorTxt0"/>
+
+                <EditText
+                    android:id="@+id/armorTxt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:layout_marginTop="38dp"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt76"
+                    app:layout_constraintTop_toBottomOf="@id/wpnTxt6"/>
+
+                <TextView
+                    android:id="@+id/txt77"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Hp: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="53dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt74"
+                    app:layout_constraintLeft_toRightOf="@id/armorTxt1"/>
+
+                <EditText
+                    android:id="@+id/armorTxt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:layout_marginTop="38dp"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt77"
+                    app:layout_constraintTop_toBottomOf="@id/wpnTxt7"/>
+
+                <TextView
+                    android:id="@+id/txt78"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spec Def: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt75"/>
+
+                <EditText
+                    android:id="@+id/armorTxt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt78"
+                    app:layout_constraintTop_toBottomOf="@id/armorTxt0"/>
+
+                <TextView
+                    android:id="@+id/txt79"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spec Abs: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt76"
+                    app:layout_constraintLeft_toRightOf="@id/armorTxt3"/>
+
+                <EditText
+                    android:id="@+id/armorTxt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt79"
+                    app:layout_constraintTop_toBottomOf="@id/armorTxt1"/>
+
+                <TextView
+                    android:id="@+id/txt80"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Mp: "
+                    android:textSize="@dimen/sizeText"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt77"
+                    app:layout_constraintLeft_toRightOf="@id/armorTxt4"/>
+
+                <EditText
+                    android:id="@+id/armorTxt5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="3"
+                    android:text="0"
+                    android:inputType="number"
+                    android:textSize="@dimen/sizeEdit"
+                    app:layout_constraintLeft_toRightOf="@id/txt80"
+                    app:layout_constraintTop_toBottomOf="@id/armorTxt2"/>
+
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="145dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Shield/Orb"
+                    android:textSize="20dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt74"/>
 
             </android.support.constraint.ConstraintLayout>
 
