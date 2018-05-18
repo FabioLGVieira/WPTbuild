@@ -5,8 +5,8 @@ public class Classes {
 
     private int f, i, t, a, v; //28  6  21  17  27
 
-    private int lvl, addHp, addStm, addMp, pdBaseMin = 3, pdBaseMax = 4;
-    private double hp, mp, stm, atkRtg, def, abs, spd, weight, pdAtkMin, pdAtkMax;
+    private int lvl, addHp, addMp, pdBaseMin = 3, pdBaseMax = 4;
+    private double hp, mp, addStm, stm, atkRtg, def, abs, spd, weight, pdAtkMin, pdAtkMax;
 
     public Classes() {
 /*   Se colocar o TextWatcher pro player ver a alteração em tempo real
@@ -142,8 +142,8 @@ public class Classes {
         return mp;
     }
 
-    public int addStm(int amuletAddStm, int ring1StmMix, int ring1AddStm, int ring2StmMix, int ring2AddStm, int bracStmMix, int gauntStmMix, int bootsStmMix, int orbStmMix) {
-        addStm = amuletAddStm + ring1StmMix + ring1AddStm + ring2StmMix + ring2AddStm + bracStmMix + gauntStmMix + bootsStmMix + orbStmMix;
+    public double addStm(int amuletAddStm, double ring1StmReg, int ring1AddStm, double ring2StmReg, int ring2AddStm, int bracStmMix, int gauntStmMix, int bootsStmMix, int orbStmMix) {
+        addStm = amuletAddStm + ring1StmReg + ring1AddStm + ring2StmReg + ring2AddStm + bracStmMix + gauntStmMix + bootsStmMix + orbStmMix;
         return addStm;
     }
 
