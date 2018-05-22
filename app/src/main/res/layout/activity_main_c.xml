@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <HorizontalScrollView
+        android:id="@+id/lista_chars"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioGroup
+            android:id="@+id/rg_chars"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/btnFs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rgClick"
+                android:text="Fighter" />
+
+            <RadioButton
+                android:id="@+id/btnMs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rgClick"
+                android:text="Mechanician" />
+
+            <RadioButton
+                android:id="@+id/btnPs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rgClick"
+                android:text="Pike" />
+
+            <RadioButton
+                android:id="@+id/btnAs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rgClick"
+                android:text="Archer" />
+
+            <RadioButton
+                android:id="@+id/btnAss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rgClick"
+                android:text="Assassin" />
+
+            <RadioButton
+                android:id="@+id/btnKs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rgClick"
+                android:text="Knight" />
+
+            <RadioButton
+                android:id="@+id/btnMgs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rgClick"
+                android:text="Mage" />
+
+            <RadioButton
+                android:id="@+id/btnSs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rgClick"
+                android:text="Shaman" />
+
+            <RadioButton
+                android:id="@+id/btnPrs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rgClick"
+                android:text="Priestess" />
+
+            <RadioButton
+                android:id="@+id/btnAts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rgClick"
+                android:text="Atalanta" />
+        </RadioGroup>
+    </HorizontalScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lista_chars">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Status"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Level:"
+                app:layout_constraintBottom_toBottomOf="@id/edit_level"
+                app:layout_constraintRight_toLeftOf="@id/guideline"
+                app:layout_constraintTop_toTopOf="@id/edit_level" />
+
+            <EditText
+                android:id="@+id/edit_level"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="333"
+                android:inputType="number"
+                android:maxLength="3"
+                app:layout_constraintLeft_toRightOf="@id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/title_status" />
+
+            <TextView
+                android:id="@+id/txt_spirit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spi:"
+                app:layout_constraintBottom_toBottomOf="@id/edit_spirit"
+                app:layout_constraintRight_toLeftOf="@id/guideline"
+                app:layout_constraintTop_toTopOf="@id/edit_spirit" />
+
+            <EditText
+                android:id="@+id/edit_spirit"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:hint="0"
+                android:inputType="number"
+                android:maxLength="3"
+                app:layout_constraintLeft_toLeftOf="@id/edit_level"
+                app:layout_constraintRight_toRightOf="@id/edit_level"
+                app:layout_constraintTop_toBottomOf="@id/edit_level" />
+
+            <TextView
+                android:id="@+id/txt_strength"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Str:"
+                app:layout_constraintBottom_toBottomOf="@id/edit_strength"
+                app:layout_constraintRight_toLeftOf="@id/edit_strength"
+                app:layout_constraintTop_toTopOf="@id/edit_strength" />
+
+            <EditText
+                android:id="@+id/edit_strength"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:hint="0"
+                android:inputType="number"
+                android:maxLength="3"
+                app:layout_constraintBottom_toBottomOf="@id/edit_spirit"
+                app:layout_constraintRight_toLeftOf="@id/txt_spirit"
+                app:layout_constraintTop_toTopOf="@id/edit_spirit" />
+
+            <TextView
+                android:id="@+id/txt_talent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Tal:"
+                app:layout_constraintBottom_toBottomOf="@id/edit_strength"
+                app:layout_constraintLeft_toRightOf="@id/edit_spirit"
+                app:layout_constraintTop_toTopOf="@id/edit_strength" />
+
+            <EditText
+                android:id="@+id/edit_talent"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:hint="0"
+                android:inputType="number"
+                android:maxLength="3"
+                app:layout_constraintBottom_toBottomOf="@id/edit_spirit"
+                app:layout_constraintLeft_toRightOf="@+id/txt_talent"
+                app:layout_constraintTop_toTopOf="@id/edit_spirit" />
+
+            <TextView
+                android:id="@+id/txt_agility"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Agi:"
+                app:layout_constraintBottom_toBottomOf="@id/edit_agility"
+                app:layout_constraintRight_toLeftOf="@id/edit_agility"
+                app:layout_constraintTop_toTopOf="@id/edit_agility" />
+
+            <EditText
+                android:id="@+id/edit_agility"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:hint="0"
+                android:inputType="number"
+                android:maxLength="3"
+                app:layout_constraintLeft_toLeftOf="@id/edit_strength"
+                app:layout_constraintRight_toRightOf="@id/edit_strength"
+                app:layout_constraintTop_toBottomOf="@id/edit_strength" />
+
+            <TextView
+                android:id="@+id/txt_health"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hea:"
+                app:layout_constraintBottom_toBottomOf="@id/edit_health"
+                app:layout_constraintRight_toLeftOf="@id/edit_health"
+                app:layout_constraintTop_toTopOf="@id/edit_health" />
+
+            <EditText
+                android:id="@+id/edit_health"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:hint="0"
+                android:inputType="number"
+                android:maxLength="3"
+                app:layout_constraintLeft_toLeftOf="@id/edit_spirit"
+                app:layout_constraintRight_toRightOf="@id/edit_spirit"
+                app:layout_constraintTop_toBottomOf="@id/edit_spirit" />
+
+            <TextView
+                android:id="@+id/txt_points_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Left Points:"
+                app:layout_constraintBottom_toBottomOf="@id/edit_points_left"
+                app:layout_constraintRight_toLeftOf="@id/edit_points_left"
+                app:layout_constraintTop_toTopOf="@id/edit_points_left" />
+
+            <EditText
+                android:id="@+id/edit_points_left"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:hint="0"
+                android:inputType="number"
+                android:maxLength="4"
+                app:layout_constraintLeft_toLeftOf="@id/edit_health"
+                app:layout_constraintRight_toRightOf="@id/edit_health"
+                app:layout_constraintTop_toBottomOf="@id/edit_health" />
+
+            <TextView
+                android:id="@+id/title_acessories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Amulet/Rings/Shelton"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edit_points_left" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/title_acessories">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/title_amulet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Amulet"
+                        app:layout_constraintLeft_toLeftOf="@id/txt_amulet_hp_regen"
+                        app:layout_constraintRight_toRightOf="@id/edit_amulet_sp_regen"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txt_amulet_hp_regen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:text="Hp Reg:"
+                        app:layout_constraintBottom_toBottomOf="@id/edit_amulet_hp_regen"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/edit_amulet_hp_regen" />
+
+                    <EditText
+                        android:id="@+id/edit_amulet_hp_regen"
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="0"
+                        android:inputType="numberDecimal"
+                        android:maxLength="4"
+                        app:layout_constraintLeft_toRightOf="@id/txt_amulet_hp_regen"
+                        app:layout_constraintTop_toBottomOf="@id/title_amulet" />
+
+                    <TextView
+                        android:id="@+id/txt_amulet_mp_regen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Mp Reg:"
+                        app:layout_constraintBottom_toBottomOf="@id/edit_amulet_hp_regen"
+                        app:layout_constraintLeft_toRightOf="@id/edit_amulet_hp_regen"
+                        app:layout_constraintTop_toTopOf="@id/edit_amulet_hp_regen" />
+
+                    <EditText
+                        android:id="@+id/edit_amulet_mp_regen"
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="0"
+                        android:inputType="numberDecimal"
+                        android:maxLength="4"
+                        app:layout_constraintLeft_toRightOf="@id/txt_amulet_mp_regen"
+                        app:layout_constraintTop_toBottomOf="@id/title_amulet" />
+
+                    <TextView
+                        android:id="@+id/txt_amulet_sp_regen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Stm Reg: "
+                        app:layout_constraintBottom_toBottomOf="@id/edit_amulet_sp_regen"
+                        app:layout_constraintLeft_toRightOf="@id/edit_amulet_mp_regen"
+                        app:layout_constraintTop_toTopOf="@id/edit_amulet_sp_regen" />
+
+                    <EditText
+                        android:id="@+id/edit_amulet_sp_regen"
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="0"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        app:layout_constraintLeft_toRightOf="@id/txt_amulet_sp_regen"
+                        app:layout_constraintTop_toBottomOf="@id/title_amulet" />
+
+                    <TextView
+                        android:id="@+id/txt_amulet_add_hp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hp Add: "
+                        app:layout_constraintBottom_toBottomOf="@id/edit_amulet_add_hp"
+                        app:layout_constraintRight_toLeftOf="@id/edit_amulet_hp_regen"
+                        app:layout_constraintTop_toTopOf="@id/edit_amulet_add_hp" />
+
+                    <EditText
+                        android:id="@+id/edit_amulet_add_hp"
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:hint="0"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        app:layout_constraintLeft_toLeftOf="@id/edit_amulet_hp_regen"
+                        app:layout_constraintLeft_toRightOf="@id/txt_amulet_add_hp"
+                        app:layout_constraintTop_toBottomOf="@id/edit_amulet_hp_regen" />
+
+                    <TextView
+                        android:id="@+id/txt_amulet_add_mp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mp Add: "
+                        app:layout_constraintBottom_toBottomOf="@+id/edit_amulet_add_mp"
+                        app:layout_constraintRight_toLeftOf="@+id/edit_amulet_add_mp"
+                        app:layout_constraintTop_toTopOf="@id/edit_amulet_add_mp" />
+
+                    <EditText
+                        android:id="@+id/edit_amulet_add_mp"
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:hint="0"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        app:layout_constraintLeft_toLeftOf="@id/edit_amulet_mp_regen"
+                        app:layout_constraintRight_toRightOf="@id/edit_amulet_mp_regen"
+                        app:layout_constraintTop_toBottomOf="@id/edit_amulet_mp_regen" />
+
+                    <TextView
+                        android:id="@+id/txt_amulet_add_sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Stm Add: "
+                        app:layout_constraintBottom_toBottomOf="@id/edit_amulet_add_sp"
+                        app:layout_constraintRight_toLeftOf="@id/edit_amulet_add_sp"
+                        app:layout_constraintTop_toTopOf="@id/edit_amulet_add_sp" />
+
+                    <EditText
+                        android:id="@+id/edit_amulet_add_sp"
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:hint="0"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        app:layout_constraintLeft_toLeftOf="@id/edit_amulet_sp_regen"
+                        app:layout_constraintRight_toRightOf="@id/edit_amulet_sp_regen"
+                        app:layout_constraintTop_toBottomOf="@id/edit_amulet_sp_regen" />
+
+                    <TextView
+                        android:id="@+id/txt_amulet_spec_hp_regen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Spec HP Reg: "
+                        app:layout_constraintBottom_toBottomOf="@id/edit_amulet_spec_hp_regen"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/edit_amulet_spec_hp_regen" />
+
+                    <EditText
+                        android:id="@+id/edit_amulet_spec_hp_regen"
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:hint="0"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        app:layout_constraintLeft_toRightOf="@id/txt_amulet_spec_hp_regen"
+                        app:layout_constraintTop_toBottomOf="@id/edit_amulet_add_hp" />
+
+                    <TextView
+                        android:id="@+id/txt_amulet_spec_mp_regen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Spec Mp Reg: "
+                        app:layout_constraintBottom_toBottomOf="@id/edit_amulet_spec_hp_regen"
+                        app:layout_constraintLeft_toRightOf="@id/edit_amulet_spec_hp_regen"
+                        app:layout_constraintTop_toTopOf="@id/edit_amulet_spec_hp_regen" />
+
+                    <EditText
+                        android:id="@+id/edit_amulet_spec_mp_regen"
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:hint="0"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        app:layout_constraintLeft_toRightOf="@id/txt_amulet_spec_mp_regen"
+                        app:layout_constraintTop_toBottomOf="@id/edit_amulet_add_mp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ring 1"/>
+
+                </android.support.constraint.ConstraintLayout>
+            </HorizontalScrollView>
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".5" />
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
