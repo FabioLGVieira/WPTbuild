@@ -2,6 +2,8 @@ package com.example.adm.wptbuild;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +16,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    public int sp, ep, lvl, strg, sprt, tal, agi, hlth, fUsed, iUsed, tUsed, aUsed, vUsed, stats, statsUsed,   //status
+    public int sp, ep, lvl, strg, sprt, tal, agi, hlth, fUsed, iUsed, tUsed, aUsed, vUsed, statusLeft,   //status
             amuletAddHp, amuletAddMp, amuletAddStm,  //amulet
             ring1AddHp, ring1AddStm, ring1Def, ring1AtkRtg, ring1AddMp, //ring1
             ring2AddHp, ring2AddStm, ring2Def, ring2AtkRtg, ring2AddMp, //ring2
@@ -37,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             shieldAbs, shieldBlk, shieldAbsAdd, shieldBlkAdd,
             hp, mp, stm, atkRtg, def, abs, spd, weight, pdAtkMin, pdAtkMax; //shield
 
-    EditText lvlText, strgtxt, sprttxt, taltxt, agitxt, healthtxt,
+    EditText lvl_Text, str_Text, sprt_Text, tal_Text, agi_Text, health_Text,
             amulet0, amulet1, amulet2, amulet3, amulet4, amulet5, amulet6,
             ringA0, ringA1, ringA2, ringA3, ringA4, ringA5, ringA6, ringA7, ringA8, ringA9,
             ringB0, ringB1, ringB2, ringB3, ringB4, ringB5, ringB6, ringB7, ringB8, ringB9,
@@ -48,20 +50,20 @@ public class MainActivity extends AppCompatActivity {
             wpn0, wpn1, wpn2, wpn3, wpn4, wpn5, wpn6, wpn7,
             armor0, armor1, armor2, armor3, armor4, armor5, armor6,
             shield0;
-    TextView pointsView, leftPoints;
+    TextView pointsView, left_Points;
     RadioGroup rg;
     RadioButton boxFs, boxMs, boxPs, boxAs, boxAss, boxMgs, boxKs, boxSs, boxPrs, boxAts;
     Button calcbtn;
-    String texto;
+    String texto, empty = "a";
 
     Classes teste = new Classes();
-
+    int lp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_c);
         //region radioButton
-        rg = (RadioGroup) findViewById(R.id.lay1);
+        rg = (RadioGroup) findViewById(R.id.rg_chars);
         boxFs = (RadioButton) findViewById(R.id.btnFs);
         boxMs = (RadioButton) findViewById(R.id.btnMs);
         boxPs = (RadioButton) findViewById(R.id.btnPs);
@@ -75,15 +77,15 @@ public class MainActivity extends AppCompatActivity {
         //endregion
 
         //region EditTexts
-        lvlText = (EditText) findViewById(R.id.levelText);
-        //leftPoints = findViewById(R.id.pointsLeft);
+        lvl_Text = (EditText) findViewById(R.id.edit_level);
+        left_Points =  findViewById(R.id.txt_points_left_n);
         pointsView = findViewById(R.id.resultView);
-        strgtxt = (EditText) findViewById(R.id.strgTxt);
-        sprttxt = (EditText) findViewById(R.id.sprtText);
-        taltxt = (EditText) findViewById(R.id.talText);
-        agitxt = (EditText) findViewById(R.id.agiText);
-        healthtxt = (EditText) findViewById(R.id.healthText);
-        amulet0 = (EditText) findViewById(R.id.amulet0Txt);
+        str_Text = (EditText) findViewById(R.id.edit_strength);
+        sprt_Text = (EditText) findViewById(R.id.edit_spirit);
+        tal_Text = (EditText) findViewById(R.id.edit_talent);
+        agi_Text = (EditText) findViewById(R.id.edit_agility);
+        health_Text = (EditText) findViewById(R.id.edit_health);
+        /*amulet0 = (EditText) findViewById(R.id.amulet0Txt);
         amulet1 = (EditText) findViewById(R.id.amulet1Txt);
         amulet2 = (EditText) findViewById(R.id.amulet2Txt);
         amulet3 = (EditText) findViewById(R.id.amulet3Txt);
@@ -155,11 +157,59 @@ public class MainActivity extends AppCompatActivity {
         armor2 = (EditText) findViewById(R.id.armorTxt2);
         armor3 = (EditText) findViewById(R.id.armorTxt3);
         armor4 = (EditText) findViewById(R.id.armorTxt4);
-        armor5 = (EditText) findViewById(R.id.armorTxt5);
+        armor5 = (EditText) findViewById(R.id.armorTxt5);*/
         //armor6 = (EditText) findViewById(R.id.armorTxt7);
 
         calcbtn = (Button) findViewById(R.id.CalculateBtn);
         //endregion
+
+        while(lp>0){
+            //lp = Integer.parseInt(left_Points.getText().toString());
+
+            lp = statusLeft - (strg - teste.getF());
+            left_Points.setText(String.valueOf(lp));
+            Log.i("tag", " "+lp);
+        }
+
+        lvl_Text.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+               try{ if(lvl_Text.toString() != "" || lvl_Text.toString() == "" ) {
+                   lvl = Integer.parseInt(lvl_Text.getText().toString());
+                   statusLeft = teste.totalPoints(lvl);
+                   lp = statusLeft - (strg + teste.getF());
+                   left_Points.setText(String.valueOf(lp));
+               }
+               }catch (NumberFormatException e){
+                   empty = "";
+               }
+            }
+        });
+
+        str_Text.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+                try{ if(str_Text.toString() != "" || str_Text.toString() == "" ){
+                    strg = Integer.parseInt(str_Text.getText().toString());
+                }
+                }catch (NumberFormatException e){
+                    empty = "";
+                }
+            }
+        });
 
         //results
         calcbtn.setOnClickListener(new View.OnClickListener() {
@@ -167,15 +217,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 int id = rg.getCheckedRadioButtonId();
 
-                lvl = Integer.parseInt(lvlText.getText().toString());
-                strg = Integer.parseInt(strgtxt.getText().toString());
-                sprt = Integer.parseInt(sprttxt.getText().toString());
-                tal = Integer.parseInt(taltxt.getText().toString());
-                agi = Integer.parseInt(agitxt.getText().toString());
-                hlth = Integer.parseInt(healthtxt.getText().toString());
+                //lvl = Integer.parseInt(lvl_Text.getText().toString());
+                //strg = Integer.parseInt(str_Text.getText().toString());
+                sprt = Integer.parseInt(sprt_Text.getText().toString());
+                tal = Integer.parseInt(tal_Text.getText().toString());
+                agi = Integer.parseInt(agi_Text.getText().toString());
+                hlth = Integer.parseInt(health_Text.getText().toString());
 
                 //region items
-                //amulet
+              /*  //amulet
                 amuletAddHp = Integer.parseInt(amulet0.getText().toString());
                 amuletAddMp = Integer.parseInt(amulet1.getText().toString());
                 amuletAddStm = Integer.parseInt(amulet2.getText().toString());
@@ -206,7 +256,7 @@ public class MainActivity extends AppCompatActivity {
                 ring2AddHp = Integer.parseInt(ringA6.getText().toString());
                 ring2AddMp = Integer.parseInt(ringA7.getText().toString());
                 ring2AddStm = Integer.parseInt(ringA8.getText().toString());
-                ring2HpRecover = Integer.parseInt(ringA9.getText().toString());
+                ring2HpRecover = Integer.parseInt(ringA9.getText().toString());*/
 
 
                 //sheltom
@@ -389,84 +439,40 @@ public class MainActivity extends AppCompatActivity {
         int id = rg.getCheckedRadioButtonId();
         switch (id) {
             case R.id.btnFs:
-                strgtxt.setText("28");
-                sprttxt.setText("6");
-                taltxt.setText("21");
-                agitxt.setText("17");
-                healthtxt.setText("27");
-                lvlText.requestFocus();
+                str_Text.setText("28");
+                sprt_Text.setText("6");
+                tal_Text.setText("21");
+                agi_Text.setText("17");
+                health_Text.setText("27");
+                //teste.getStatus("Fs");
                 break;
-            case R.id.btnMs:
-                strgtxt.setText("24");
-                sprttxt.setText("8");
-                taltxt.setText("25");
-                agitxt.setText("18");
-                healthtxt.setText("24");
-                lvlText.requestFocus();
+        /*    case R.id.btnMs:
+                teste.getStatus("Ms");
                 break;
             case R.id.btnPs:
-                strgtxt.setText("26");
-                sprttxt.setText("9");
-                taltxt.setText("20");
-                agitxt.setText("19");
-                healthtxt.setText("25");
-                lvlText.requestFocus();
+                teste.getStatus("Ps");
                 break;
             case R.id.btnAs:
-                strgtxt.setText("17");
-                sprttxt.setText("11");
-                taltxt.setText("21");
-                agitxt.setText("27");
-                healthtxt.setText("23");
-                lvlText.requestFocus();
+                teste.getStatus("As");
                 break;
             case R.id.btnAss:
-                strgtxt.setText("25");
-                sprttxt.setText("10");
-                taltxt.setText("22");
-                agitxt.setText("20");
-                healthtxt.setText("22");
-                lvlText.requestFocus();
+                teste.getStatus("Ass");
                 break;
             case R.id.btnMgs:
-                strgtxt.setText("16");
-                sprttxt.setText("29");
-                taltxt.setText("19");
-                agitxt.setText("14");
-                healthtxt.setText("21");
-                lvlText.requestFocus();
+                teste.getStatus("Mgs");
                 break;
             case R.id.btnKs:
-                strgtxt.setText("26");
-                sprttxt.setText("13");
-                taltxt.setText("17");
-                agitxt.setText("19");
-                healthtxt.setText("24");
-                lvlText.requestFocus();
+                teste.getStatus("Ks");
                 break;
             case R.id.btnSs:
-                strgtxt.setText("15");
-                sprttxt.setText("27");
-                taltxt.setText("20");
-                agitxt.setText("15");
-                healthtxt.setText("22");
-                lvlText.requestFocus();
+                teste.getStatus("Ss");
                 break;
             case R.id.btnPrs:
-                strgtxt.setText("15");
-                sprttxt.setText("28");
-                taltxt.setText("21");
-                agitxt.setText("15");
-                healthtxt.setText("20");
-                lvlText.requestFocus();
+                teste.getStatus("PRs");
                 break;
             case R.id.btnAts:
-                strgtxt.setText("23");
-                sprttxt.setText("15");
-                taltxt.setText("19");
-                agitxt.setText("19");
-                healthtxt.setText("23");
-                break;
+                teste.getStatus("ATs");
+                break;*/
         }
     }
 }

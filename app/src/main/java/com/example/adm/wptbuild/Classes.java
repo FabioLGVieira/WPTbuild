@@ -1,18 +1,111 @@
 package com.example.adm.wptbuild;
 
 
+import android.util.Log;
+
 public class Classes {
 
-    private int f, i, t, a, v; //28  6  21  17  27
+    private int f, i, t, a, v;
 
     private int lvl, addHp, addMp, pdBaseMin = 3, pdBaseMax = 4;
     private double hp, mp, addStm, stm, atkRtg, def, abs, spd, weight, pdAtkMin, pdAtkMax;
 
+/*    //region StatusCharacters
+    public void getStatus(String classe) {
+        switch (classe) {
+            case "Fs":
+                f = 28;
+                i = 6;
+                t = 21;
+                a = 17;
+                v = 27;
+                break;
+            case "Ms":
+                f = 24;
+                i = 8;
+                t = 25;
+                a = 18;
+                v = 24;
+                break;
+            case "Ps":
+                f = 26;
+                i = 9;
+                t = 20;
+                a = 19;
+                v = 25;
+                break;
+            case "As":
+                f = 17;
+                i = 11;
+                t = 21;
+                a = 27;
+                v = 23;
+                break;
+            case "Ass":
+                f = 25;
+                i = 10;
+                t = 22;
+                a = 20;
+                v = 22;
+                break;
+            case "Mgs":
+                f = 16;
+                i = 29;
+                t = 19;
+                a = 14;
+                v = 21;
+                break;
+            case "Ks":
+                f = 26;
+                i = 13;
+                t = 17;
+                a = 19;
+                v = 24;
+                break;
+            case "Ss":
+                f = 15;
+                i = 27;
+                t = 20;
+                a = 15;
+                v = 22;
+                break;
+            case "Prs":
+                f = 15;
+                i = 28;
+                t = 21;
+                a = 15;
+                v = 20;
+                break;
+            case "Ats":
+                f = 23;
+                i = 15;
+                t = 19;
+                a = 19;
+                v = 23;
+                break;
+        }
+      // strgtxt.setText(f);
+      // sprttxt.setText(i);
+      // taltxt.setText(t);
+      // agitxt.setText(a);
+      // healthtxt.setText(v);
+      // lvlText.requestFocus();
+    }
+//endregion   */
+
+    public int totalPoints(int lvl) {
+        int status = ((lvl * 5) - 5) + ((lvl > 79) ? ((lvl - 79) * 2) : 0) + ((lvl > 89) ? ((lvl - 89) * 3) : 0) + ((lvl > 30) ? 5 : 0)
+                + ((lvl > 69) ? 5 : 0) + ((lvl > 79) ? 5 : 0) + ((lvl > 124) ? 10 : 0);//statusUsed;
+
+return  status;
+    }
+
     public Classes() {
 /*   Se colocar o TextWatcher pro player ver a alteração em tempo real
-        statsUsed = stats - fUsed - iUsed - tUsed - aUsed - vUsed;
         stats = ((lvl * 5) - 5) + ((lvl > 79) ? ((lvl - 79) * 2) : 0) + ((lvl > 89) ? ((lvl - 89) * 3) : 0) + ((lvl > 30) ? 5 : 0)
                 + ((lvl > 69) ? 5 : 0) + ((lvl > 79) ? 5 : 0) + ((lvl > 124) ? 10 : 0) - statsUsed;
+        statusUsed = (strg - f) + (sprt - i) + (tal - t) + (agi - a) + (hlth - v);
+        statusLeft = status - statusUsed;
         fUsed = 0;
         strg = f - fUsed;
         iUsed = 0;
@@ -23,33 +116,30 @@ public class Classes {
         agi = a - aUsed;
         vUsed = 0;
         hlth = v - vUsed;*/
-
-
-
     }
 
     public double calcAtkRtg(int lvl, int agi, int tal, int wpnAtkRtg, int bracAtk, int bracSpec, int ring1AtkRtg, int ring2AtkRtg) {
-        atkRtg = (lvl * 1.9) + (agi * 3.1) + (tal * 1.5) + wpnAtkRtg + bracAtk + (lvl/bracSpec) + ring1AtkRtg + ring2AtkRtg;
+        atkRtg = (lvl * 1.9) + (agi * 3.1) + (tal * 1.5) + wpnAtkRtg + bracAtk + (lvl / bracSpec) + ring1AtkRtg + ring2AtkRtg;
         return atkRtg;
     }
 
     public double atkPwr1Agi(int tal, int agi, int wpnAtkpwr1, int wpnAtkPwr2, int shelMinMix) {
-        pdAtkMin = pdBaseMin + (wpnAtkpwr1+wpnAtkPwr2)/16 + lvl/6 + (tal + agi) / 40 + ((agi/130)*wpnAtkpwr1) + wpnAtkpwr1 + shelMinMix;  // falta
+        pdAtkMin = pdBaseMin + (wpnAtkpwr1 + wpnAtkPwr2) / 16 + lvl / 6 + (tal + agi) / 40 + ((agi / 130) * wpnAtkpwr1) + wpnAtkpwr1 + shelMinMix;  // falta
         return pdAtkMin;
     }
 
     public double atkPwr1Fs(int strg, int tal, int agi, int wpnAtkpwr1, int wpnAtkPwr2, int shelMinMix) {
-        pdAtkMin = pdBaseMin + (strg/130) + (tal + agi) / 40 + (wpnAtkpwr1 + wpnAtkPwr2)/16 + lvl/6 + ((strg/130)*wpnAtkpwr1) + wpnAtkpwr1 + shelMinMix;  // falta
+        pdAtkMin = pdBaseMin + (strg / 130) + (tal + agi) / 40 + (wpnAtkpwr1 + wpnAtkPwr2) / 16 + lvl / 6 + ((strg / 130) * wpnAtkpwr1) + wpnAtkpwr1 + shelMinMix;  // falta
         return pdAtkMin;
     }
 
     public double atkPwr1Sprt(int sprt, int tal, int agi, int wpnAtkpwr1, int wpnAtkPwr2, int shelMinMix) {
-        pdAtkMin = pdBaseMin + (wpnAtkpwr1+wpnAtkPwr2)/16 + lvl/6 + (tal + agi) / 40 + ((sprt/145)*wpnAtkpwr1) + wpnAtkpwr1 + shelMinMix;  // falta
+        pdAtkMin = pdBaseMin + (wpnAtkpwr1 + wpnAtkPwr2) / 16 + lvl / 6 + (tal + agi) / 40 + ((sprt / 145) * wpnAtkpwr1) + wpnAtkpwr1 + shelMinMix;  // falta
         return pdAtkMin;
     }
 
     public double atkPwr1Prs(int sprt, int tal, int agi, int wpnAtkpwr1, int wpnAtkPwr2, int shelMinMix) {
-        pdAtkMin = pdBaseMin + (wpnAtkpwr1+wpnAtkPwr2)/16 + lvl/6 + (tal + agi) / 40 + ((sprt/160)*wpnAtkpwr1) + wpnAtkpwr1 + shelMinMix;  // falta
+        pdAtkMin = pdBaseMin + (wpnAtkpwr1 + wpnAtkPwr2) / 16 + lvl / 6 + (tal + agi) / 40 + ((sprt / 160) * wpnAtkpwr1) + wpnAtkpwr1 + shelMinMix;  // falta
         return pdAtkMin;
     }
 
