@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    public int sp, ep, lvl, strg, sprt, tal, agi, hlth, fUsed, iUsed, tUsed, aUsed, vUsed, statusLeft,   //status
+    public int sp, ep, lvl, strg, sprt, tal, agi, hlth, fUsed, iUsed, tUsed, aUsed, vUsed, statusLeft,total_Points,   //status
             amuletAddHp, amuletAddMp, amuletAddStm,  //amulet
             ring1AddHp, ring1AddStm, ring1Def, ring1AtkRtg, ring1AddMp, //ring1
             ring2AddHp, ring2AddStm, ring2Def, ring2AtkRtg, ring2AddMp, //ring2
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     String texto, empty = "a";
 
     Classes teste = new Classes();
-    int lp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -163,14 +163,6 @@ public class MainActivity extends AppCompatActivity {
         calcbtn = (Button) findViewById(R.id.CalculateBtn);
         //endregion
 
-        while(lp>0){
-            //lp = Integer.parseInt(left_Points.getText().toString());
-
-            lp = statusLeft - (strg - teste.getF());
-            left_Points.setText(String.valueOf(lp));
-            Log.i("tag", " "+lp);
-        }
-
         lvl_Text.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
@@ -182,9 +174,10 @@ public class MainActivity extends AppCompatActivity {
             public void afterTextChanged(Editable editable) {
                try{ if(lvl_Text.toString() != "" || lvl_Text.toString() == "" ) {
                    lvl = Integer.parseInt(lvl_Text.getText().toString());
-                   statusLeft = teste.totalPoints(lvl);
-                   lp = statusLeft - (strg + teste.getF());
-                   left_Points.setText(String.valueOf(lp));
+                   total_Points = teste.totalPoints(lvl);
+                   statusLeft = total_Points;
+                   left_Points.setText(String.valueOf(statusLeft));
+                   left_Points.setTextColor(getResources().getColor(R.color.green_Positive));
                }
                }catch (NumberFormatException e){
                    empty = "";
@@ -204,6 +197,112 @@ public class MainActivity extends AppCompatActivity {
 
                 try{ if(str_Text.toString() != "" || str_Text.toString() == "" ){
                     strg = Integer.parseInt(str_Text.getText().toString());
+                    statusLeft = total_Points - (strg>teste.getF()?(strg - teste.getF()):0) - (sprt>teste.getI()?(sprt - teste.getI()):0) - (tal>teste.getT()?(tal - teste.getT()):0) -
+                                  (agi>teste.getA()?(agi - teste.getA()):0) - (hlth>teste.getV()?(hlth - teste.getV()):0);
+                    left_Points.setText(String.valueOf(statusLeft));
+                    if(statusLeft<=0){
+                        left_Points.setTextColor(getResources().getColor(R.color.red_Negative));
+                    } else {left_Points.setTextColor(getResources().getColor(R.color.green_Positive));}
+                }
+                }catch (NumberFormatException e){
+                    empty = "";
+                }
+            }
+        });
+
+        sprt_Text.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+                try{ if(sprt_Text.toString() != "" || sprt_Text.toString() == "" ){
+                    sprt = Integer.parseInt(sprt_Text.getText().toString());
+                    statusLeft = total_Points - (strg>teste.getF()?(strg - teste.getF()):0) - (sprt>teste.getI()?(sprt - teste.getI()):0) - (tal>teste.getT()?(tal - teste.getT()):0) -
+                                   (agi>teste.getA()?(agi - teste.getA()):0) - (hlth>teste.getV()?(hlth - teste.getV()):0);
+                    left_Points.setText(String.valueOf(statusLeft));
+                    if(statusLeft<=0){
+                        left_Points.setTextColor(getResources().getColor(R.color.red_Negative));
+                    } else {left_Points.setTextColor(getResources().getColor(R.color.green_Positive));}
+                }
+                }catch (NumberFormatException e){
+                    empty = "";
+                }
+            }
+        });
+
+        tal_Text.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+                try{ if(tal_Text.toString() != "" || tal_Text.toString() == "" ){
+                    tal = Integer.parseInt(tal_Text.getText().toString());
+                    statusLeft = total_Points - (strg>teste.getF()?(strg - teste.getF()):0) - (sprt>teste.getI()?(sprt - teste.getI()):0) - (tal>teste.getT()?(tal - teste.getT()):0) -
+                            (agi>teste.getA()?(agi - teste.getA()):0) - (hlth>teste.getV()?(hlth - teste.getV()):0);
+                    left_Points.setText(String.valueOf(statusLeft));
+                    if(statusLeft<=0){
+                        left_Points.setTextColor(getResources().getColor(R.color.red_Negative));
+                    } else {left_Points.setTextColor(getResources().getColor(R.color.green_Positive));}
+                }
+                }catch (NumberFormatException e){
+                    empty = "";
+                }
+            }
+        });
+
+        agi_Text.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+                try{ if(agi_Text.toString() != "" || agi_Text.toString() == "" ){
+                    agi = Integer.parseInt(agi_Text.getText().toString());
+                    statusLeft = total_Points - (strg>teste.getF()?(strg - teste.getF()):0) - (sprt>teste.getI()?(sprt - teste.getI()):0) - (tal>teste.getT()?(tal - teste.getT()):0) -
+                            (agi>teste.getA()?(agi - teste.getA()):0) - (hlth>teste.getV()?(hlth - teste.getV()):0);
+                    left_Points.setText(String.valueOf(statusLeft));
+                    if(statusLeft<=0){
+                        left_Points.setTextColor(getResources().getColor(R.color.red_Negative));
+                    } else {left_Points.setTextColor(getResources().getColor(R.color.green_Positive));}
+                }
+                }catch (NumberFormatException e){
+                    empty = "";
+                }
+            }
+        });
+
+        health_Text.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+                try{ if(health_Text.toString() != "" || health_Text.toString() == "" ){
+                    hlth = Integer.parseInt(health_Text.getText().toString());
+                    statusLeft = total_Points - (strg>teste.getF()?(strg - teste.getF()):0) - (sprt>teste.getI()?(sprt - teste.getI()):0) - (tal>teste.getT()?(tal - teste.getT()):0) -
+                            (agi>teste.getA()?(agi - teste.getA()):0) - (hlth>teste.getV()?(hlth - teste.getV()):0);
+                    left_Points.setText(String.valueOf(statusLeft));
+                    if(statusLeft<=0){
+                        left_Points.setTextColor(getResources().getColor(R.color.red_Negative));
+                    } else {left_Points.setTextColor(getResources().getColor(R.color.green_Positive));}
                 }
                 }catch (NumberFormatException e){
                     empty = "";
@@ -439,14 +538,14 @@ public class MainActivity extends AppCompatActivity {
         int id = rg.getCheckedRadioButtonId();
         switch (id) {
             case R.id.btnFs:
-                str_Text.setText("28");
-                sprt_Text.setText("6");
-                tal_Text.setText("21");
-                agi_Text.setText("17");
-                health_Text.setText("27");
-                //teste.getStatus("Fs");
+              // str_Text.setText("28");
+              // sprt_Text.setText("6");
+              // tal_Text.setText("21");
+              // agi_Text.setText("17");
+              // health_Text.setText("27");
+                teste.getStatus("Fs");
                 break;
-        /*    case R.id.btnMs:
+            case R.id.btnMs:
                 teste.getStatus("Ms");
                 break;
             case R.id.btnPs:
@@ -468,11 +567,17 @@ public class MainActivity extends AppCompatActivity {
                 teste.getStatus("Ss");
                 break;
             case R.id.btnPrs:
-                teste.getStatus("PRs");
+                teste.getStatus("Prs");
                 break;
             case R.id.btnAts:
-                teste.getStatus("ATs");
-                break;*/
+                teste.getStatus("Ats");
+                break;
         }
+        str_Text.setText(String.valueOf(teste.getF()));
+        sprt_Text.setText(String.valueOf(teste.getI()));
+        tal_Text.setText(String.valueOf(teste.getT()));
+        agi_Text.setText(String.valueOf(teste.getA()));
+        health_Text.setText(String.valueOf(teste.getV()));
+        lvl_Text.requestFocus();
     }
 }

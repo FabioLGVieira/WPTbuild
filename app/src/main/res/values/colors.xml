@@ -3,6 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="red_Negative">#990919</color>
+    <color name="green_Positive">#129909</color>
     <dimen name="sizeText">16sp</dimen>
     <dimen name="sizeEdit">14sp</dimen>
 </resources>

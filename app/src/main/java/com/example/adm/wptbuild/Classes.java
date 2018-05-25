@@ -10,7 +10,7 @@ public class Classes {
     private int lvl, addHp, addMp, pdBaseMin = 3, pdBaseMax = 4;
     private double hp, mp, addStm, stm, atkRtg, def, abs, spd, weight, pdAtkMin, pdAtkMax;
 
-/*    //region StatusCharacters
+  //region StatusCharacters
     public void getStatus(String classe) {
         switch (classe) {
             case "Fs":
@@ -84,14 +84,8 @@ public class Classes {
                 v = 23;
                 break;
         }
-      // strgtxt.setText(f);
-      // sprttxt.setText(i);
-      // taltxt.setText(t);
-      // agitxt.setText(a);
-      // healthtxt.setText(v);
-      // lvlText.requestFocus();
     }
-//endregion   */
+//endregion
 
     public int totalPoints(int lvl) {
         int status = ((lvl * 5) - 5) + ((lvl > 79) ? ((lvl - 79) * 2) : 0) + ((lvl > 89) ? ((lvl - 89) * 3) : 0) + ((lvl > 30) ? 5 : 0)
