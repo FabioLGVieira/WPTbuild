@@ -5,6 +5,10 @@
     <color name="colorAccent">#FF4081</color>
     <color name="red_Negative">#990919</color>
     <color name="green_Positive">#129909</color>
+    <color name="red_hp">#e70205</color>
+    <color name="green_stm">#64d900</color>
+    <color name="blue_mp">#2b29f9</color>
+    <color name="yellow_atk">#f8e038</color>
     <dimen name="sizeText">16sp</dimen>
     <dimen name="sizeEdit">14sp</dimen>
 </resources>

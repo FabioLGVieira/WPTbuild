@@ -143,7 +143,7 @@ return  status;
     }
 
     public double atkPwr2Fs(int tal, int agi, int wpnAtkpwr2, int shelMaxMix) {
-        pdAtkMax = ((tal + agi) / 45 + wpnAtkpwr2 + shelMaxMix);  // falta
+        pdAtkMax = pdBaseMax + ((tal + agi) / 45 + wpnAtkpwr2 + shelMaxMix);  // falta
         return pdAtkMin;
     }
 
@@ -206,8 +206,8 @@ return  status;
         return hp;
     }
 
-    public int addMp(int amuletAddMp, int ring1AddMp, int ring2AddMp, int shelMpAdd, int shelHpBoost, int bracMpMix, int gauntMpMix, int bootsMpMix, int wpnMpMix, int armorMpMix, int shieldMpMix) {
-        addMp = amuletAddMp + ring1AddMp + ring2AddMp + shelMpAdd + shelHpBoost + bracMpMix + gauntMpMix + bootsMpMix + wpnMpMix + armorMpMix + shieldMpMix;
+    public int addMp(int amuletAddMp, int ring1AddMp, int ring2AddMp, int shelHpBoost, int bracMpMix, int gauntMpMix, int bootsMpMix, int wpnMpMix, int armorMpMix, int shieldMpMix) {
+        addMp = amuletAddMp + ring1AddMp + ring2AddMp + shelHpBoost + bracMpMix + gauntMpMix + bootsMpMix + wpnMpMix + armorMpMix + shieldMpMix;
         return addMp;
     }
 
