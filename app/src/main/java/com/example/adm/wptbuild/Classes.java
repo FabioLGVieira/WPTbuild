@@ -90,26 +90,10 @@ public class Classes {
     public int totalPoints(int lvl) {
         int status = ((lvl * 5) - 5) + ((lvl > 79) ? ((lvl - 79) * 2) : 0) + ((lvl > 89) ? ((lvl - 89) * 3) : 0) + ((lvl > 30) ? 5 : 0)
                 + ((lvl > 69) ? 5 : 0) + ((lvl > 79) ? 5 : 0) + ((lvl > 124) ? 10 : 0);//statusUsed;
-
 return  status;
     }
 
     public Classes() {
-/*   Se colocar o TextWatcher pro player ver a alteração em tempo real
-        stats = ((lvl * 5) - 5) + ((lvl > 79) ? ((lvl - 79) * 2) : 0) + ((lvl > 89) ? ((lvl - 89) * 3) : 0) + ((lvl > 30) ? 5 : 0)
-                + ((lvl > 69) ? 5 : 0) + ((lvl > 79) ? 5 : 0) + ((lvl > 124) ? 10 : 0) - statsUsed;
-        statusUsed = (strg - f) + (sprt - i) + (tal - t) + (agi - a) + (hlth - v);
-        statusLeft = status - statusUsed;
-        fUsed = 0;
-        strg = f - fUsed;
-        iUsed = 0;
-        sprt = i - iUsed;
-        tUsed = 0;
-        tal = t - tUsed;
-        aUsed = 0;
-        agi = a - aUsed;
-        vUsed = 0;
-        hlth = v - vUsed;*/
     }
 
     public double calcAtkRtg(int lvl, int agi, int tal, int wpnAtkRtg, int bracAtk, int bracSpec, int ring1AtkRtg, int ring2AtkRtg) {
@@ -226,8 +210,8 @@ return  status;
         return mp;
     }
 
-    public double addStm(int amuletAddStm, double ring1StmReg, int ring1AddStm, double ring2StmReg, int ring2AddStm, int bracStmMix, int gauntStmMix, int bootsStmMix, int orbStmMix) {
-        addStm = amuletAddStm + ring1StmReg + ring1AddStm + ring2StmReg + ring2AddStm + bracStmMix + gauntStmMix + bootsStmMix + orbStmMix;
+    public double addStm(int amuletAddStm, int ring1AddStm, int ring2AddStm, int bracStmMix, int gauntStmMix, int bootsStmMix, int orbStmMix) {
+        addStm = amuletAddStm + ring1AddStm + ring2AddStm + bracStmMix + gauntStmMix + bootsStmMix + orbStmMix;
         return addStm;
     }
 

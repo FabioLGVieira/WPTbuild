@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
             gauntAbs, gauntAbsAdd, gauntAtkPwr, //gauntlets
             bootsAbs, bootsAbsAdd, bootsSpd, bootsSpdAdd, //boots
             wpnAtkCrit, wpnAtkBlk, wpnAtkpwrSpec, wpnAtkRtgSpec, wpnAtkCritSpec, //weapon
-            armorAbs, armorAbsAdd, //armor
-            shieldAbs, shieldBlk, shieldAbsAdd, shieldBlkAdd,
+            armorAbs, armorAbsAdd, armorMpReg, //armor
+            shieldAbs, shieldBlk, shieldAbsAdd, shieldBlkAdd, shieldHpReg, shieldMpReg,
             hp, mp, stm, atkRtg, def, abs, spd, weight, pdAtkMin, pdAtkMax; //shield
 
     EditText lvl_Text, str_Text, sprt_Text, tal_Text, agi_Text, health_Text,
@@ -45,11 +45,11 @@ public class MainActivity extends AppCompatActivity {
             ringB0, ringB1, ringB2, ringB3, ringB4, ringB5, ringB6, ringB7, ringB8, ringB9,
             shel0, shel1, shel2, shel3, shel4, shel5, shel6, shel7, shel8, shel9, shel10,
             brac0, brac1, brac2, brac3, brac4, brac5, brac6,
-            gaunt0, gaunt1, gaunt2, gaunt3, gaunt4,
+            gaunt0, gaunt1, gaunt2, gaunt3, gaunt4, gaunt5, gaunt6, gaunt7,
             boots0, boots1, boots2, boots3, boots4, boots5, boots6, boots7, boots8,
-            wpn0, wpn1, wpn2, wpn3, wpn4, wpn5, wpn6, wpn7,
+            wpn0, wpn1, wpn2, wpn3, wpn4, wpn5, wpn6, wpn7, wpn8,
             armor0, armor1, armor2, armor3, armor4, armor5, armor6,
-            shield0;
+            shield0, shield1, shield2, shield3, shield4, shield5, shield6, shield7, shield8, shield9, shield10;
     TextView pointsView, left_Points, txt_atk_rate, txt_atk_pwr, txt_defense, txt_absorb, txt_velocity;
     RadioGroup rg;
     RadioButton boxFs, boxMs, boxPs, boxAs, boxAss, boxMgs, boxKs, boxSs, boxPrs, boxAts;
@@ -129,42 +129,57 @@ public class MainActivity extends AppCompatActivity {
         shel8 = (EditText) findViewById(R.id.edit_shel_mp_rec);
         shel9 = (EditText) findViewById(R.id.edit_shel_hp_boost);
         shel10 = (EditText) findViewById(R.id.edit_shel_mp_boost);
-        /*brac0 = (EditText) findViewById(R.id.bracTxt0);
-        brac1 = (EditText) findViewById(R.id.bracTxt1);
-        brac2 = (EditText) findViewById(R.id.bracTxt2);
-        brac3 = (EditText) findViewById(R.id.bracTxt3);
-        brac4 = (EditText) findViewById(R.id.bracTxt4);
-        brac5 = (EditText) findViewById(R.id.bracTxt5);
-        brac6 = (EditText) findViewById(R.id.bracTxt6);
-        gaunt0 = (EditText) findViewById(R.id.gauntTxt0);
-        gaunt1 = (EditText) findViewById(R.id.gauntTxt1);
-        gaunt2 = (EditText) findViewById(R.id.gauntTxt2);
-        gaunt3 = (EditText) findViewById(R.id.gauntTxt3);
-        gaunt4 = (EditText) findViewById(R.id.gauntTxt4);
-        boots0 = (EditText) findViewById(R.id.bootsTxt0);
-        boots1 = (EditText) findViewById(R.id.bootsTxt1);
-        boots2 = (EditText) findViewById(R.id.bootsTxt2);
-        boots3 = (EditText) findViewById(R.id.bootsTxt3);
-        boots4 = (EditText) findViewById(R.id.bootsTxt4);
-        boots5 = (EditText) findViewById(R.id.bootsTxt5);
-        boots6 = (EditText) findViewById(R.id.bootsTxt6);
-        boots7 = (EditText) findViewById(R.id.bootsTxt7);
-        boots8 = (EditText) findViewById(R.id.bootsTxt8);
-        wpn0 = (EditText) findViewById(R.id.wpnTxt0);
-        wpn1 = (EditText) findViewById(R.id.wpnTxt1);
-        wpn2 = (EditText) findViewById(R.id.wpnTxt2);
-        wpn3 = (EditText) findViewById(R.id.wpnTxt3);
-        wpn4 = (EditText) findViewById(R.id.wpnTxt4);
-        wpn5 = (EditText) findViewById(R.id.wpnTxt5);
-        wpn6 = (EditText) findViewById(R.id.wpnTxt6);
-        wpn7 = (EditText) findViewById(R.id.wpnTxt7);
-        armor0 = (EditText) findViewById(R.id.armorTxt0);
-        armor1 = (EditText) findViewById(R.id.armorTxt1);
-        armor2 = (EditText) findViewById(R.id.armorTxt2);
-        armor3 = (EditText) findViewById(R.id.armorTxt3);
-        armor4 = (EditText) findViewById(R.id.armorTxt4);
-        armor5 = (EditText) findViewById(R.id.armorTxt5);*/
-        //armor6 = (EditText) findViewById(R.id.armorTxt7);
+        brac0 = (EditText) findViewById(R.id.edit_brac_def);
+        brac1 = (EditText) findViewById(R.id.edit_brac_atk);
+        brac2 = (EditText) findViewById(R.id.edit_brac_hp);
+        brac3 = (EditText) findViewById(R.id.edit_brac_mp);
+        brac4 = (EditText) findViewById(R.id.edit_brac_sp);
+        brac5 = (EditText) findViewById(R.id.edit_brac_spec);
+        brac6 = (EditText) findViewById(R.id.edit_brac_crit);
+        gaunt0 = (EditText) findViewById(R.id.edit_gaunt_def);
+        gaunt1 = (EditText) findViewById(R.id.edit_gaunt_abs);
+        gaunt2 = (EditText) findViewById(R.id.edit_gaunt_def_spec);
+        gaunt3 = (EditText) findViewById(R.id.edit_gaunt_abs_spec);
+        gaunt4 = (EditText) findViewById(R.id.edit_gaunt_spec);
+        gaunt5 = (EditText) findViewById(R.id.edit_gaunt_hp);
+        gaunt6 = (EditText) findViewById(R.id.edit_gaunt_mp);
+        gaunt7 = (EditText) findViewById(R.id.edit_gaunt_sp);
+        boots0 = (EditText) findViewById(R.id.edit_boots_def);
+        boots1 = (EditText) findViewById(R.id.edit_boots_abs);
+        boots2 = (EditText) findViewById(R.id.edit_boots_abs_spec);
+        boots3 = (EditText) findViewById(R.id.edit_boots_spd);
+        boots4 = (EditText) findViewById(R.id.edit_boots_spd_spec);
+        boots5 = (EditText) findViewById(R.id.edit_boots_evade);
+        boots6 = (EditText) findViewById(R.id.edit_boots_hp);
+        boots7 = (EditText) findViewById(R.id.edit_boots_mp);
+        boots8 = (EditText) findViewById(R.id.edit_boots_sp);
+        wpn0 = (EditText) findViewById(R.id.edit_weapon_min);
+        wpn1 = (EditText) findViewById(R.id.edit_weapon_max);
+        wpn2 = (EditText) findViewById(R.id.edit_weapon_atk);
+        wpn3 = (EditText) findViewById(R.id.edit_weapon_crit);
+        wpn4 = (EditText) findViewById(R.id.edit_weapon_block);
+        wpn5 = (EditText) findViewById(R.id.edit_weapon_hp);
+        wpn6 = (EditText) findViewById(R.id.edit_weapon_mp);
+        wpn7 = (EditText) findViewById(R.id.edit_weapon_atk_spec);
+        wpn8 = (EditText) findViewById(R.id.edit_weapon_pwr_spec);
+        armor0 = (EditText) findViewById(R.id.edit_armor_def);
+        armor1 = (EditText) findViewById(R.id.edit_armor_abs);
+        armor2 = (EditText) findViewById(R.id.edit_armor_hp);
+        armor3 = (EditText) findViewById(R.id.edit_armor_def_spec);
+        armor4 = (EditText) findViewById(R.id.edit_armor_abs_spec);
+        armor5 = (EditText) findViewById(R.id.edit_armor_mp);
+        armor6 = (EditText) findViewById(R.id.edit_armor_mp_reg);
+        shield0 = (EditText) findViewById(R.id.edit_shield_def);
+        shield1 = (EditText) findViewById(R.id.edit_shield_abs);
+        shield2 = (EditText) findViewById(R.id.edit_shield_blk);
+        shield3 = (EditText) findViewById(R.id.edit_shield_def_spec);
+        shield4 = (EditText) findViewById(R.id.edit_shield_abs_spec);
+        shield5 = (EditText) findViewById(R.id.edit_shield_blk_spec);
+        shield6 = (EditText) findViewById(R.id.edit_shield_hp);
+        shield7 = (EditText) findViewById(R.id.edit_shield_mp);
+        shield8 = (EditText) findViewById(R.id.edit_shield_sp);
+        shield9 = (EditText) findViewById(R.id.edit_shield_hp_reg);
+        shield10 = (EditText) findViewById(R.id.edit_shield_mp_reg);
 
         calcbtn = (Button) findViewById(R.id.CalculateBtn);
         //endregion
@@ -350,19 +365,26 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 int id = rg.getCheckedRadioButtonId();
 
+//region verificação dos edit
                 int[] ids = new int[]{R.id.edit_amulet_hp_regen, R.id.edit_amulet_mp_regen, R.id.edit_amulet_sp_regen, R.id.edit_amulet_add_hp, R.id.edit_amulet_add_mp, R.id.edit_amulet_add_sp,
                         R.id.edit_amulet_spec_hp_regen, R.id.edit_amulet_spec_mp_regen, R.id.edit_ring1_def, R.id.edit_ring1_atk, R.id.edit_ring1_abs, R.id.edit_ring1_hp_regen, R.id.edit_ring1_mp_regen,
                         R.id.edit_ring1_sp_regen, R.id.edit_ring1_hp_add, R.id.edit_ring1_mp_add, R.id.edit_ring1_sp_add, R.id.edit_ring1_hp_spec, R.id.edit_ring2_def, R.id.edit_ring2_atk, R.id.edit_ring2_abs,
                         R.id.edit_ring2_hp_regen, R.id.edit_ring2_mp_regen, R.id.edit_ring2_sp_regen, R.id.edit_ring2_hp_add, R.id.edit_ring2_mp_add, R.id.edit_ring2_sp_add, R.id.edit_ring2_hp_spec, R.id.edit_shel_def,
-                        R.id.edit_shel_atk_min, R.id.edit_shel_atk_max, R.id.edit_shel_hp_reg, R.id.edit_shel_hp_add, R.id.edit_shel_hp_rec, R.id.edit_shel_mp_reg, R.id.edit_shel_sp_add, R.id.edit_shel_mp_rec,
-                        R.id.edit_shel_hp_boost, R.id.edit_shel_mp_boost};
+                        R.id.edit_shel_atk_min, R.id.edit_shel_atk_max, R.id.edit_shel_hp_reg, R.id.edit_shel_hp_add, R.id.edit_shel_hp_rec, R.id.edit_shel_mp_reg, R.id.edit_shel_sp_add, R.id.edit_shel_mp_rec, R.id.edit_shel_hp_boost,
+                        R.id.edit_shel_mp_boost, R.id.edit_brac_def, R.id.edit_brac_atk, R.id.edit_brac_hp, R.id.edit_brac_mp, R.id.edit_brac_sp, R.id.edit_brac_spec, R.id.edit_brac_crit, R.id.edit_gaunt_def,
+                        R.id.edit_gaunt_abs, R.id.edit_gaunt_def_spec, R.id.edit_gaunt_abs_spec, R.id.edit_gaunt_spec, R.id.edit_gaunt_hp, R.id.edit_gaunt_mp, R.id.edit_gaunt_sp, R.id.edit_boots_def, R.id.edit_boots_abs,
+                        R.id.edit_boots_abs_spec, R.id.edit_boots_spd, R.id.edit_boots_spd_spec, R.id.edit_boots_evade, R.id.edit_boots_hp, R.id.edit_boots_mp, R.id.edit_boots_sp, R.id.edit_weapon_min,
+                        R.id.edit_weapon_max, R.id.edit_weapon_atk, R.id.edit_weapon_crit, R.id.edit_weapon_block, R.id.edit_weapon_hp, R.id.edit_weapon_mp, R.id.edit_weapon_atk_spec, R.id.edit_weapon_pwr_spec,
+                        R.id.edit_armor_def, R.id.edit_armor_abs, R.id.edit_armor_hp, R.id.edit_armor_def_spec, R.id.edit_armor_abs_spec, R.id.edit_armor_mp, R.id.edit_armor_mp_reg, R.id.edit_shield_def,
+                        R.id.edit_shield_abs, R.id.edit_shield_blk, R.id.edit_shield_def_spec, R.id.edit_shield_abs_spec, R.id.edit_shield_blk_spec, R.id.edit_shield_hp, R.id.edit_shield_mp,
+                        R.id.edit_shield_sp, R.id.edit_shield_hp_reg, R.id.edit_shield_mp_reg};
                 for (int c : ids) {
                     EditText t = (EditText) findViewById(c);
                     if (t.toString() != "" || t.toString() == "") {
                         t.setText("0");
                     }
                 }
-
+//endregion
                 // lvl = Integer.parseInt(lvl_Text.getText().toString());
                 // strg = Integer.parseInt(str_Text.getText().toString());
                 // sprt = Integer.parseInt(sprt_Text.getText().toString());
@@ -405,7 +427,6 @@ public class MainActivity extends AppCompatActivity {
                 ring2AddStm = Integer.parseInt(ringB8.getText().toString());
                 ring2HpRecover = Integer.parseInt(ringB9.getText().toString());
 
-
                 //sheltom
                 shelDefMix = Integer.parseInt(shel0.getText().toString());
                 shelMinMix = Integer.parseInt(shel1.getText().toString());
@@ -420,65 +441,67 @@ public class MainActivity extends AppCompatActivity {
                 shelMpBoost = lvl / Integer.parseInt(shel10.getText().toString());
 
                 //bracelets
-                bracDef = 0;
-                bracAtk = 0;
-                bracSpec = 1;
-                bracCrit = 0.01;
-                bracHpMix = 0;
-                bracMpMix = 0;
-                bracStmMix = 0;
+                bracDef = Integer.parseInt(brac0.getText().toString());
+                bracAtk = Integer.parseInt(brac1.getText().toString());
+                bracHpMix = Integer.parseInt(brac2.getText().toString());
+                bracMpMix = Integer.parseInt(brac3.getText().toString());
+                bracStmMix = Integer.parseInt(brac4.getText().toString());
+                bracSpec = Integer.parseInt(brac5.getText().toString());
+                bracCrit = Integer.parseInt(brac6.getText().toString());
 
                 //gauntlets
-                gauntDef = 0;
-                gauntAbs = 0;
-                gauntDefAdd = 0;
-                gauntAbsAdd = 0;
-                gauntAtkPwr = lvl / 10;
-                gauntHpMix = 0;
-                gauntMpMix = 0;
-                gauntStmMix = 0;
+                gauntDef = Integer.parseInt(gaunt0.getText().toString());
+                gauntAbs = Integer.parseInt(gaunt1.getText().toString());
+                gauntDefAdd = Integer.parseInt(gaunt2.getText().toString());
+                gauntAbsAdd = Integer.parseInt(gaunt3.getText().toString());
+                gauntAtkPwr = lvl / Integer.parseInt(gaunt4.getText().toString());
+                gauntHpMix = Integer.parseInt(gaunt5.getText().toString());
+                gauntMpMix = Integer.parseInt(gaunt6.getText().toString());
+                gauntStmMix = Integer.parseInt(gaunt7.getText().toString());
 
                 //boots
-                bootsDef = 0;
-                bootsAbs = 0;
-                bootsDefAdd = 0;
-                bootsAbsAdd = 0;
-                bootsSpd = 0;
-                bootsSpdAdd = 0;
-                bootsHpMix = 0;
-                bootsMpMix = 0;
-                bootsStmMix = 0;
+                bootsDef = Integer.parseInt(boots0.getText().toString());
+                bootsAbs = Integer.parseInt(boots1.getText().toString());
+                bootsDefAdd = Integer.parseInt(boots2.getText().toString());
+                bootsAbsAdd = Integer.parseInt(boots3.getText().toString());
+                bootsSpd = Integer.parseInt(boots4.getText().toString());
+                bootsSpdAdd = Integer.parseInt(boots5.getText().toString());
+                bootsHpMix = Integer.parseInt(boots6.getText().toString());
+                bootsMpMix = Integer.parseInt(boots7.getText().toString());
+                bootsStmMix = Integer.parseInt(boots8.getText().toString());
 
                 //weapon
-                wpnAtkpwr1 = 0;
-                wpnAtkpwr2 = 0;
-                wpnAtkRtg = 0;
-                wpnAtkCrit = 0;
-                wpnAtkBlk = 0;
-                wpnAtkpwrSpec = 0;
-                wpnAtkRtgSpec = 0;
-                wpnAtkCritSpec = 0;
-                wpnHpMix = 0;
-                wpnMpMix = 0;
+                wpnAtkpwr1 = Integer.parseInt(wpn0.getText().toString());
+                wpnAtkpwr2 = Integer.parseInt(wpn1.getText().toString());
+                wpnAtkRtg = Integer.parseInt(wpn2.getText().toString());
+                wpnAtkCrit = Integer.parseInt(wpn3.getText().toString());
+                wpnAtkBlk = Integer.parseInt(wpn4.getText().toString());
+                wpnHpMix = Integer.parseInt(wpn5.getText().toString());
+                wpnMpMix = Integer.parseInt(wpn6.getText().toString());
+                wpnAtkpwrSpec = Integer.parseInt(wpn7.getText().toString());
+                wpnAtkRtgSpec = Integer.parseInt(wpn8.getText().toString());
 
                 //armor
-                armorDef = 0;
-                armorAbs = 0;
-                armorDefAdd = 0;
-                armorAbsAdd = 0;
-                armorHpMix = 0;
-                armorMpMix = 0;
+                armorDef = Integer.parseInt(armor0.getText().toString());
+                armorAbs = Integer.parseInt(armor1.getText().toString());
+                armorHpMix = Integer.parseInt(armor2.getText().toString());
+                armorDefAdd = Integer.parseInt(armor3.getText().toString());
+                armorAbsAdd = Integer.parseInt(armor4.getText().toString());
+                armorMpMix = Integer.parseInt(armor5.getText().toString());
+                armorMpReg = Integer.parseInt(armor6.getText().toString());
 
                 //shield
-                shieldDef = 0;
-                shieldAbs = 0;
-                shieldBlk = 0;
-                shieldDefAdd = 0;
-                shieldAbsAdd = 0;
-                shieldBlkAdd = 0;
-                shieldHpMix = 0;
-                shieldMpMix = 0;
-                orbStmMix = 0;
+                shieldDef = Integer.parseInt(shield0.getText().toString());
+                shieldAbs = Integer.parseInt(shield1.getText().toString());
+                shieldBlk = Integer.parseInt(shield2.getText().toString());
+                shieldDefAdd = Integer.parseInt(shield3.getText().toString());
+                shieldAbsAdd = Integer.parseInt(shield4.getText().toString());
+                shieldBlkAdd = Integer.parseInt(shield5.getText().toString());
+                shieldHpMix = Integer.parseInt(shield6.getText().toString());
+                shieldMpMix = Integer.parseInt(shield7.getText().toString());
+                orbStmMix = Integer.parseInt(shield8.getText().toString());
+                shieldHpReg = Integer.parseInt(shield9.getText().toString());
+                shieldMpReg = Integer.parseInt(shield10.getText().toString());
                 //endregion
 
                 sp = ((lvl - 9) / 2) + ((lvl > 54) ? 1 : 0) + ((lvl > 69) ? 1 : 0) + ((lvl > 79) ? 2 : 0);
@@ -490,70 +513,60 @@ public class MainActivity extends AppCompatActivity {
                         pdAtkMax = teste.atkPwr2Fs(tal, agi, wpnAtkpwr2, shelMaxMix);
                         hp = teste.hpFsMs(lvl, strg, hlth) + teste.addHp(amuletAddHp, ring1AddHp, ring2AddHp, shelHpAdd, shelHpBoost, bracHpMix, gauntHpMix, bootsHpMix, wpnHpMix, armorHpMix, shieldHpMix);
                         mp = teste.mpFsPsAsAss(lvl, sprt) + teste.addMp(amuletAddMp, ring1AddMp, ring2AddMp, shelMpBoost, bracMpMix, gauntMpMix, bootsMpMix, wpnMpMix, armorMpMix, shieldMpMix);
-                        stm = teste.stmAll(lvl, strg, sprt, tal, hlth) + teste.addStm(amuletAddStm, ring1StmReg, ring1AddStm, ring2StmReg, ring2AddStm, bracStmMix, gauntStmMix, bootsStmMix, orbStmMix);
                         break;
                     case R.id.btnMs:
                         pdAtkMin = teste.atkPwr1Fs(strg, tal, agi, wpnAtkpwr1, wpnAtkpwr2, shelMinMix);
                         pdAtkMax = teste.atkPwr2Fs(tal, agi, wpnAtkpwr2, shelMaxMix);
                         hp = teste.hpFsMs(lvl, strg, hlth) + teste.addHp(amuletAddHp, ring1AddHp, ring2AddHp, shelHpAdd, shelHpBoost, bracHpMix, gauntHpMix, bootsHpMix, wpnHpMix, armorHpMix, shieldHpMix);
                         mp = teste.mpMsKsAts(lvl, sprt) + teste.addMp(amuletAddMp, ring1AddMp, ring2AddMp, shelMpBoost, bracMpMix, gauntMpMix, bootsMpMix, wpnMpMix, armorMpMix, shieldMpMix);
-                        stm = teste.stmAll(lvl, strg, sprt, tal, hlth) + teste.addStm(amuletAddStm, ring1StmReg, ring1AddStm, ring2StmReg, ring2AddStm, bracStmMix, gauntStmMix, bootsStmMix, orbStmMix);
                         break;
                     case R.id.btnPs:
                         pdAtkMin = teste.atkPwr1Fs(strg, tal, agi, wpnAtkpwr1, wpnAtkpwr2, shelMinMix);
                         pdAtkMax = teste.atkPwr2Fs(tal, agi, wpnAtkpwr2, shelMaxMix);
                         hp = teste.hpPsKsAtsSS(lvl, strg, hlth) + teste.addHp(amuletAddHp, ring1AddHp, ring2AddHp, shelHpAdd, shelHpBoost, bracHpMix, gauntHpMix, bootsHpMix, wpnHpMix, armorHpMix, shieldHpMix);
                         mp = teste.mpFsPsAsAss(lvl, sprt) + teste.addMp(amuletAddMp, ring1AddMp, ring2AddMp, shelMpBoost, bracMpMix, gauntMpMix, bootsMpMix, wpnMpMix, armorMpMix, shieldMpMix);
-                        stm = teste.stmAll(lvl, strg, sprt, tal, hlth) + teste.addStm(amuletAddStm, ring1StmReg, ring1AddStm, ring2StmReg, ring2AddStm, bracStmMix, gauntStmMix, bootsStmMix, orbStmMix);
                         break;
                     case R.id.btnAs:
                         pdAtkMin = teste.atkPwr1Fs(strg, tal, agi, wpnAtkpwr1, wpnAtkpwr2, shelMinMix);
                         pdAtkMax = teste.atkPwr2Fs(tal, agi, wpnAtkpwr2, shelMaxMix);
                         hp = teste.hpAsAss(lvl, strg, hlth) + teste.addHp(amuletAddHp, ring1AddHp, ring2AddHp, shelHpAdd, shelHpBoost, bracHpMix, gauntHpMix, bootsHpMix, wpnHpMix, armorHpMix, shieldHpMix);
                         mp = teste.mpFsPsAsAss(lvl, sprt) + teste.addMp(amuletAddMp, ring1AddMp, ring2AddMp, shelMpBoost, bracMpMix, gauntMpMix, bootsMpMix, wpnMpMix, armorMpMix, shieldMpMix);
-                        stm = teste.stmAll(lvl, strg, sprt, tal, hlth) + teste.addStm(amuletAddStm, ring1StmReg, ring1AddStm, ring2StmReg, ring2AddStm, bracStmMix, gauntStmMix, bootsStmMix, orbStmMix);
                         break;
                     case R.id.btnAss:
                         pdAtkMin = teste.atkPwr1Fs(strg, tal, agi, wpnAtkpwr1, wpnAtkpwr2, shelMinMix);
                         pdAtkMax = teste.atkPwr2Fs(tal, agi, wpnAtkpwr2, shelMaxMix);
                         hp = teste.hpAsAss(lvl, strg, hlth) + teste.addHp(amuletAddHp, ring1AddHp, ring2AddHp, shelHpAdd, shelHpBoost, bracHpMix, gauntHpMix, bootsHpMix, wpnHpMix, armorHpMix, shieldHpMix);
                         mp = teste.mpFsPsAsAss(lvl, sprt) + teste.addMp(amuletAddMp, ring1AddMp, ring2AddMp, shelMpBoost, bracMpMix, gauntMpMix, bootsMpMix, wpnMpMix, armorMpMix, shieldMpMix);
-                        stm = teste.stmAll(lvl, strg, sprt, tal, hlth) + teste.addStm(amuletAddStm, ring1StmReg, ring1AddStm, ring2StmReg, ring2AddStm, bracStmMix, gauntStmMix, bootsStmMix, orbStmMix);
                         break;
                     case R.id.btnMgs:
                         pdAtkMin = teste.atkPwr1Fs(strg, tal, agi, wpnAtkpwr1, wpnAtkpwr2, shelMinMix);
                         pdAtkMax = teste.atkPwr2Fs(tal, agi, wpnAtkpwr2, shelMaxMix);
                         hp = teste.hpMgs(lvl, hlth) + teste.addHp(amuletAddHp, ring1AddHp, ring2AddHp, shelHpAdd, shelHpBoost, bracHpMix, gauntHpMix, bootsHpMix, wpnHpMix, armorHpMix, shieldHpMix);
                         mp = teste.mpPrsMgsSS(lvl, sprt) + teste.addMp(amuletAddMp, ring1AddMp, ring2AddMp, shelMpBoost, bracMpMix, gauntMpMix, bootsMpMix, wpnMpMix, armorMpMix, shieldMpMix);
-                        stm = teste.stmAll(lvl, strg, sprt, tal, hlth) + teste.addStm(amuletAddStm, ring1StmReg, ring1AddStm, ring2StmReg, ring2AddStm, bracStmMix, gauntStmMix, bootsStmMix, orbStmMix);
                         break;
                     case R.id.btnKs:
                         pdAtkMin = teste.atkPwr1Fs(strg, tal, agi, wpnAtkpwr1, wpnAtkpwr2, shelMinMix);
                         pdAtkMax = teste.atkPwr2Fs(tal, agi, wpnAtkpwr2, shelMaxMix);
                         hp = teste.hpPsKsAtsSS(lvl, strg, hlth) + teste.addHp(amuletAddHp, ring1AddHp, ring2AddHp, shelHpAdd, shelHpBoost, bracHpMix, gauntHpMix, bootsHpMix, wpnHpMix, armorHpMix, shieldHpMix);
                         mp = teste.mpMsKsAts(lvl, sprt) + teste.addMp(amuletAddMp, ring1AddMp, ring2AddMp, shelMpBoost, bracMpMix, gauntMpMix, bootsMpMix, wpnMpMix, armorMpMix, shieldMpMix);
-                        stm = teste.stmAll(lvl, strg, sprt, tal, hlth) + teste.addStm(amuletAddStm, ring1StmReg, ring1AddStm, ring2StmReg, ring2AddStm, bracStmMix, gauntStmMix, bootsStmMix, orbStmMix);
                         break;
                     case R.id.btnSs:
                         pdAtkMin = teste.atkPwr1Fs(strg, tal, agi, wpnAtkpwr1, wpnAtkpwr2, shelMinMix);
                         pdAtkMax = teste.atkPwr2Fs(tal, agi, wpnAtkpwr2, shelMaxMix);
                         hp = teste.hpPsKsAtsSS(lvl, strg, hlth) + teste.addHp(amuletAddHp, ring1AddHp, ring2AddHp, shelHpAdd, shelHpBoost, bracHpMix, gauntHpMix, bootsHpMix, wpnHpMix, armorHpMix, shieldHpMix);
                         mp = teste.mpPrsMgsSS(lvl, sprt) + teste.addMp(amuletAddMp, ring1AddMp, ring2AddMp, shelMpBoost, bracMpMix, gauntMpMix, bootsMpMix, wpnMpMix, armorMpMix, shieldMpMix);
-                        stm = teste.stmAll(lvl, strg, sprt, tal, hlth) + teste.addStm(amuletAddStm, ring1StmReg, ring1AddStm, ring2StmReg, ring2AddStm, bracStmMix, gauntStmMix, bootsStmMix, orbStmMix);
                         break;
                     case R.id.btnPrs:
                         pdAtkMin = teste.atkPwr1Fs(strg, tal, agi, wpnAtkpwr1, wpnAtkpwr2, shelMinMix);
                         pdAtkMax = teste.atkPwr2Fs(tal, agi, wpnAtkpwr2, shelMaxMix);
                         hp = teste.hpPrs(lvl, hlth) + teste.addHp(amuletAddHp, ring1AddHp, ring2AddHp, shelHpAdd, shelHpBoost, bracHpMix, gauntHpMix, bootsHpMix, wpnHpMix, armorHpMix, shieldHpMix);
                         mp = teste.mpPrsMgsSS(lvl, sprt) + teste.addMp(amuletAddMp, ring1AddMp, ring2AddMp, shelMpBoost, bracMpMix, gauntMpMix, bootsMpMix, wpnMpMix, armorMpMix, shieldMpMix);
-                        stm = teste.stmAll(lvl, strg, sprt, tal, hlth) + teste.addStm(amuletAddStm, ring1StmReg, ring1AddStm, ring2StmReg, ring2AddStm, bracStmMix, gauntStmMix, bootsStmMix, orbStmMix);
                         break;
                     case R.id.btnAts:
                         pdAtkMin = teste.atkPwr1Fs(strg, tal, agi, wpnAtkpwr1, wpnAtkpwr2, shelMinMix);
                         pdAtkMax = teste.atkPwr2Fs(tal, agi, wpnAtkpwr2, shelMaxMix);
                         hp = teste.hpPsKsAtsSS(lvl, strg, hlth) + teste.addHp(amuletAddHp, ring1AddHp, ring2AddHp, shelHpAdd, shelHpBoost, bracHpMix, gauntHpMix, bootsHpMix, wpnHpMix, armorHpMix, shieldHpMix);
                         mp = teste.mpMsKsAts(lvl, sprt) + teste.addMp(amuletAddMp, ring1AddMp, ring2AddMp, shelMpBoost, bracMpMix, gauntMpMix, bootsMpMix, wpnMpMix, armorMpMix, shieldMpMix);
-                        stm = teste.stmAll(lvl, strg, sprt, tal, hlth) + teste.addStm(amuletAddStm, ring1StmReg, ring1AddStm, ring2StmReg, ring2AddStm, bracStmMix, gauntStmMix, bootsStmMix, orbStmMix);
                         break;
                 }
 
@@ -563,6 +576,7 @@ public class MainActivity extends AppCompatActivity {
                 abs = teste.calcAbs(def, strg, sprt, tal, agi, hlth, lvl, ring1Abs, ring2Abs, gauntAbs, gauntAbsAdd, bootsAbs, bootsAbsAdd, armorAbs,
                         armorAbsAdd, shieldAbs, shieldAbsAdd);
                 spd = teste.calcSpd(hlth, tal, lvl, bootsSpd, bootsSpdAdd);
+                stm = teste.stmAll(lvl, strg, sprt, tal, hlth) + teste.addStm(amuletAddStm, ring1AddStm, ring2AddStm, bracStmMix, gauntStmMix, bootsStmMix, orbStmMix);
                 // weight = teste.calcWeight(strg, hlth, lvl, sprt, agi);
 
                 txt_atk_rate.setText(String.valueOf(atkRtg));
